@@ -1,0 +1,28 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8778
+spring:
+  application:
+    name: my-mqtt-producer
+mqtt:
+  host: tcp://192.168.85.128:1883
+  username: admin
+  password: public
+  #服务质量
+  #0代表“至多一次”，消息发布完全依赖底层 TCP/IP 网络。会发生消息丢失或重复。这一级别可用于如下情况，环境传感器数据，丢失一次读记录无所谓，因为不久后还会有第二次发送。
+  #1代表“至少一次”，确保消息到达，但消息重复可能会发生。
+  #2代表“只有一次”，确保消息到达一次。这一级别可用于如下情况，在计费系统中，消息重复或丢失会导致不正确的结果。
+  qos: 1
+  #服务器列表,多个以英文逗号拼接
+  hosts: tcp://192.168.85.128:1883
+  #超时时间 单位为秒
+  connectionTimeout: 10
+  #会话心跳时间 单位为秒
+  keepAliveInterval: 20
+  #消息发布者clientId
+  publishClientId: my_publish_01
+  #消息订阅者clientId
+  subscribeClientId: my_subscribe_01

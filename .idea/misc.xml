@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/my-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/my-eureka-client/pom.xml" />
+        <option value="$PROJECT_DIR$/my-feign-server/pom.xml" />
+        <option value="$PROJECT_DIR$/my-user-server/pom.xml" />
+        <option value="$PROJECT_DIR$/my-zuul-server/pom.xml" />
+        <option value="$PROJECT_DIR$/my-mybatis-server/pom.xml" />
+        <option value="$PROJECT_DIR$/my-redis-server/pom.xml" />
+        <option value="$PROJECT_DIR$/my-kafka-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/my-kafka-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/my-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/my-config-client/pom.xml" />
+        <option value="$PROJECT_DIR$/my-schedule/pom.xml" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/my-mqtt-consumer/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,10 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://192.168.230.129:8761/eureka/
+server:
+  port: 8768
+spring:
+  application:
+    name: my-kafka-consumer

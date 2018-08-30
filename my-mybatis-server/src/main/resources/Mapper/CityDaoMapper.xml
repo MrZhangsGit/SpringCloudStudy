@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oeasycloud.mymybatisserver.dao.CityDao">
+    <resultMap id="CityResultMap" type="com.oeasycloud.mymybatisserver.domain.City">
+        <result column="id" property="id"/>
+        <result column="province_id" property="provinceId"/>
+        <result column="city_name" property="cityName"/>
+        <result column="description" property="description"/>
+    </resultMap>
+
+    <parameterMap id="City" type="com.oeasycloud.mymybatisserver.domain.City"/>
+
+    <sql id="Base_Column_list">
+        id, province_id, city_name, description
+    </sql>
+
+    <select id="findByName" resultMap="CityResultMap" parameterType="java.lang.String">
+        SELECT id, province_id, city_name, description
+        <!--<include refid="Base_Column_List"/>-->
+        FROM city
+        WHERE city_name = #{cityName}
+    </select>
+
+    <insert id="saveCity" parameterType="java.util.Map">
+        INSERT INTO city(province_id, city_name, description) VALUES (#{provinceId}, #{cityName}, #{description})
+    </insert>
+</mapper>

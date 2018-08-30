@@ -1,0 +1,10 @@
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://192.168.20.17:8761/eureka/
+server:
+  port: 8764
+spring:
+  application:
+    name: my-user-server

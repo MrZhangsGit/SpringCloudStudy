@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="my-config-client" />
+        <module name="my-config-server" />
+        <module name="my-eureka-client" />
+        <module name="my-eureka-server" />
+        <module name="my-feign-server" />
+        <module name="my-kafka-consumer" />
+        <module name="my-kafka-producer" />
+        <module name="my-mqtt-consumer" />
+        <module name="my-mqtt-producer" />
+        <module name="my-mybatis-server" />
+        <module name="my-redis-server" />
+        <module name="my-schedule" />
+        <module name="my-user-server" />
+        <module name="my-zuul-server" />
+        <module name="OEasyCloud" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="my-config-client" target="1.8" />
+      <module name="my-config-server" target="1.8" />
+      <module name="my-eureka-client" target="1.8" />
+      <module name="my-eureka-server" target="1.8" />
+      <module name="my-feign-server" target="1.8" />
+      <module name="my-kafka-consumer" target="1.8" />
+      <module name="my-kafka-producer" target="1.8" />
+      <module name="my-mqtt-consumer" target="1.8" />
+      <module name="my-mqtt-producer" target="1.8" />
+      <module name="my-mybatis-server" target="1.8" />
+      <module name="my-redis-server" target="1.8" />
+      <module name="my-schedule" target="1.8" />
+      <module name="my-user-server" target="1.8" />
+      <module name="my-zuul-server" target="1.8" />
+      <module name="OEasyCloud" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

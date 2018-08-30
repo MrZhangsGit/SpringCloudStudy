@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OEasyCloud.iml" filepath="$PROJECT_DIR$/OEasyCloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-config-client/my-config-client.iml" filepath="$PROJECT_DIR$/my-config-client/my-config-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-config-server/my-config-server.iml" filepath="$PROJECT_DIR$/my-config-server/my-config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-eureka-client/my-eureka-client.iml" filepath="$PROJECT_DIR$/my-eureka-client/my-eureka-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-eureka-server/my-eureka-server.iml" filepath="$PROJECT_DIR$/my-eureka-server/my-eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-feign-server/my-feign-server.iml" filepath="$PROJECT_DIR$/my-feign-server/my-feign-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-kafka-consumer/my-kafka-consumer.iml" filepath="$PROJECT_DIR$/my-kafka-consumer/my-kafka-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-kafka-producer/my-kafka-producer.iml" filepath="$PROJECT_DIR$/my-kafka-producer/my-kafka-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-mqtt-consumer/my-mqtt-consumer.iml" filepath="$PROJECT_DIR$/my-mqtt-consumer/my-mqtt-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-mqtt-producer/my-mqtt-producer.iml" filepath="$PROJECT_DIR$/my-mqtt-producer/my-mqtt-producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-mybatis-server/my-mybatis-server.iml" filepath="$PROJECT_DIR$/my-mybatis-server/my-mybatis-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-redis-server/my-redis-server.iml" filepath="$PROJECT_DIR$/my-redis-server/my-redis-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-schedule/my-schedule.iml" filepath="$PROJECT_DIR$/my-schedule/my-schedule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-user-server/my-user-server.iml" filepath="$PROJECT_DIR$/my-user-server/my-user-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-zuul-server/my-zuul-server.iml" filepath="$PROJECT_DIR$/my-zuul-server/my-zuul-server.iml" />
+    </modules>
+  </component>
+</project>

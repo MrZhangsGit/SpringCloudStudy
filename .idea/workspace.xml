@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c0647c17-dbca-4d75-9cbc-642793e042a8" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/my-eureka-server/target/" />
+    <ignored path="$PROJECT_DIR$/my-eureka-client/target/" />
+    <ignored path="$PROJECT_DIR$/my-feign-server/target/" />
+    <ignored path="$PROJECT_DIR$/my-user-server/target/" />
+    <ignored path="$PROJECT_DIR$/my-zuul-server/target/" />
+    <ignored path="$PROJECT_DIR$/my-config-server/target/" />
+    <ignored path="$PROJECT_DIR$/my-mybatis-server/target/" />
+    <ignored path="$PROJECT_DIR$/my-redis-server/target/" />
+    <ignored path="$PROJECT_DIR$/my-kafka-server/target/" />
+    <ignored path="$PROJECT_DIR$/my-kafka-producer/target/" />
+    <ignored path="$PROJECT_DIR$/my-kafka-consumer/target/" />
+    <ignored path="$PROJECT_DIR$/my-config-client/target/" />
+    <ignored path="$PROJECT_DIR$/feignapp/target/" />
+    <ignored path="$PROJECT_DIR$/my-schedule/target/" />
+    <ignored path="$PROJECT_DIR$/my-mqtt-producer/target/" />
+    <ignored path="$PROJECT_DIR$/my-mqtt-consumer/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="IEmqServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/service/impl/IEmqServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Kotlin File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>spring-boot-starter-web</find>
+      <find>foreach</find>
+      <find>spring-boot-starter-integration</find>
+      <find>deliveryComplete</find>
+    </findStrings>
+    <dirStrings>
+      <dir>E:\workSpaceTest\OEasyCloud</dir>
+      <dir>E:\workSpaceTest\OEasyCloud\my-mqtt-producer</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/controller/AppApiController.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/config/PushCallback.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/service/IDeviceService.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/feign/IPermissionManagementAPI.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/feign/IShadowServiceAPI.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/feign/IThingsAccessServiceAPI.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/service/impl/IEmqServiceImpl.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/service/impl/DeviceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/IDeviceRelationInfoDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/IDeviceAlertRecordDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/IDeviceManageDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/IDevicePresupposedStatusDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/IDeviceStatusInfoDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/IDeviceStatusRelationDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/IGroupDataManageDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/IGroupManageDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/IGroupSecondaryDataManageDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/ISceneControllerInfoDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/ISceneControllerSceneInfoDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/ISceneDataInfoDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/ISceneInfoDao.java" />
+        <option value="$PROJECT_DIR$/feignapp/src/main/java/com/feigntest/feignapp/dao/ISecondaryDeviceInfoDao.java" />
+        <option value="$PROJECT_DIR$/my-schedule/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/CompleteScheduleConfig.java" />
+        <option value="$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/ScheduledExecetorServiceTask.java" />
+        <option value="$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/TimerScheduleTask.java" />
+        <option value="$PROJECT_DIR$/my-schedule/pom.xml" />
+        <option value="$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/QuartzScheduleTask.java" />
+        <option value="$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/TransformationUtils.java" />
+        <option value="$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/task/ScheduledExecetorServiceTask.java" />
+        <option value="$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/MyScheduleApplication.java" />
+        <option value="$PROJECT_DIR$/my-eureka-server/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/controller/PushCallback.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/controller/PublishMessage.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/service/impl/IEmqService.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/src/main/resources/mqttconfig.properties" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/config/PublishMessage.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/service/impl/IEmqServiceImpl.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/MyMqttProducerApplication.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/my-mqtt-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/my-mqtt-consumer/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/MyMqttConsumerApplication.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/controller/MQTTServerController.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/init/MyApplicationRunner.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/utils/ServiceInfoUtil.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/config/SubscribeConn.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/config/PushCallback.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/service/impl/IEmqServiceImpl.java" />
+        <option value="$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/config/MqttConfiguration.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:/soft/Maven/maven3.5.3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="mqtt-producer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="mqtt-producer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="my-mybatis-server" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="my-mybatis-server" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="OEasyCloud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OEasyCloud" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="F:/" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.my.mqtt.consumer.utils" />
+      <recent name="com.my.mqtt.consumer.config" />
+      <recent name="com.my.mqtt.producer.service" />
+      <recent name="com.feigntest.feignapp.feign.hystrix" />
+      <recent name="com.feigntest.feignapp.feign" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workSpaceTest\OEasyCloud\my-mqtt-consumer\src\main\java\com\my\mqtt\consumer" />
+      <recent name="E:\workSpaceTest\OEasyCloud\my-mqtt-consumer\src\main\resources" />
+      <recent name="E:\workSpaceTest\OEasyCloud\my-mqtt-producer\src\main\java\com\my\mqtt\producer" />
+      <recent name="E:\workSpaceTest\OEasyCloud\my-mqtt-producer\src\main\resources" />
+      <recent name="E:\workSpaceTest\OEasyCloud" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+          <option name="enabled" value="false" />
+        </RuleState>
+      </list>
+    </option>
+    <option name="contentProportion" value="0.28193325" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.MyEurekaServerApplication">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="MyConfigClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-config-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasycloud.myconfigclient.MyConfigClientApplication" />
+    </configuration>
+    <configuration name="MyConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasycloud.myconfigserver.MyConfigServerApplication" />
+    </configuration>
+    <configuration name="MyEurekaClientApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-eureka-client" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasycloud.myeurekaclient.MyEurekaClientApplication" />
+    </configuration>
+    <configuration name="MyEurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasycloud.myeurekaserver.MyEurekaServerApplication" />
+    </configuration>
+    <configuration name="MyFeignServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-feign-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasy.myfeignserver.MyFeignServerApplication" />
+    </configuration>
+    <configuration name="MyKafkaConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-kafka-consumer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasycloud.mykafkaconsumer.MyKafkaConsumerApplication" />
+    </configuration>
+    <configuration name="MyKafkaProducerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-kafka-producer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasycloud.mykafkaproducer.MyKafkaProducerApplication" />
+    </configuration>
+    <configuration name="MyMqttConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-mqtt-consumer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.my.mqtt.consumer.MyMqttConsumerApplication" />
+    </configuration>
+    <configuration name="MyMqttProducerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-mqtt-producer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.my.mqtt.producer.MyMqttProducerApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration name="MyMybatisServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-mybatis-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasycloud.mymybatisserver.MyMybatisServerApplication" />
+    </configuration>
+    <configuration name="MyRedisServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-redis-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasycloud.myredisserver.MyRedisServerApplication" />
+    </configuration>
+    <configuration name="MyScheduleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-schedule" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.schedule.my.schedule.MyScheduleApplication" />
+    </configuration>
+    <configuration name="MyUserServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-user-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasycloud.myuserserver.MyUserServerApplication" />
+    </configuration>
+    <configuration name="MyZuulServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="my-zuul-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.oeasycloud.myzuulserver.MyZuulServerApplication" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.MyEurekaServerApplication" />
+      <item itemvalue="Spring Boot.MyEurekaClientApplication" />
+      <item itemvalue="Spring Boot.MyUserServerApplication" />
+      <item itemvalue="Spring Boot.MyFeignServerApplication" />
+      <item itemvalue="Spring Boot.MyZuulServerApplication" />
+      <item itemvalue="Spring Boot.MyMybatisServerApplication" />
+      <item itemvalue="Spring Boot.MyRedisServerApplication" />
+      <item itemvalue="Spring Boot.MyKafkaProducerApplication" />
+      <item itemvalue="Spring Boot.MyKafkaConsumerApplication" />
+      <item itemvalue="Spring Boot.MyConfigServerApplication" />
+      <item itemvalue="Spring Boot.MyConfigClientApplication" />
+      <item itemvalue="Spring Boot.MyScheduleApplication" />
+      <item itemvalue="Spring Boot.MyMqttProducerApplication" />
+      <item itemvalue="Spring Boot.MyMqttConsumerApplication" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0647c17-dbca-4d75-9cbc-642793e042a8" name="Default" comment="" />
+      <created>1522136276186</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1522136276186</updated>
+      <workItem from="1522136281706" duration="1170000" />
+      <workItem from="1522137474450" duration="8027000" />
+      <workItem from="1522197189906" duration="17419000" />
+      <workItem from="1522284247907" duration="3834000" />
+      <workItem from="1522307748580" duration="7620000" />
+      <workItem from="1522369927770" duration="23135000" />
+      <workItem from="1522629603066" duration="12829000" />
+      <workItem from="1522716001275" duration="3599000" />
+      <workItem from="1522721784805" duration="7361000" />
+      <workItem from="1522744689156" duration="1771000" />
+      <workItem from="1522801930735" duration="4449000" />
+      <workItem from="1523147644510" duration="3581000" />
+      <workItem from="1523234055835" duration="1859000" />
+      <workItem from="1523320817129" duration="4222000" />
+      <workItem from="1523327594833" duration="1798000" />
+      <workItem from="1523347060313" duration="1541000" />
+      <workItem from="1523426670496" duration="632000" />
+      <workItem from="1523521749151" duration="5622000" />
+      <workItem from="1523591105856" duration="10117000" />
+      <workItem from="1523862041973" duration="24000" />
+      <workItem from="1524735723038" duration="329000" />
+      <workItem from="1524800134578" duration="1303000" />
+      <workItem from="1526454441309" duration="25000" />
+      <workItem from="1526635599133" duration="28000" />
+      <workItem from="1526973849532" duration="611000" />
+      <workItem from="1527123143636" duration="697000" />
+      <workItem from="1527477401592" duration="612000" />
+      <workItem from="1528163728979" duration="8000" />
+      <workItem from="1530242191229" duration="5913000" />
+      <workItem from="1530258312857" duration="2630000" />
+      <workItem from="1530693159944" duration="33315000" />
+      <workItem from="1531098076189" duration="845000" />
+      <workItem from="1531789794658" duration="398000" />
+      <workItem from="1531971166288" duration="1478000" />
+      <workItem from="1532313639202" duration="1108000" />
+      <workItem from="1534127603441" duration="3956000" />
+      <workItem from="1534466096305" duration="1151000" />
+      <workItem from="1534729036216" duration="1243000" />
+      <workItem from="1534818755981" duration="1535000" />
+      <workItem from="1534837044158" duration="136000" />
+      <workItem from="1534838639705" duration="1363000" />
+      <workItem from="1535102881972" duration="652000" />
+      <workItem from="1535331512998" duration="30925000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="210871000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5044444" side_tool="true" weight="0.32356134" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.32622603" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47403315" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32947367" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32947367" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="Java Enterprise" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Run Dashboard" order="8" visible="true" weight="0.14526317" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49555555" weight="0.25368422" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.32842106" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
+      <window_info anchor="right" id="Bean Validation" order="3" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32976446" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="12" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.18.RELEASE/spring-context-4.3.18.RELEASE-sources.jar!/org/springframework/scheduling/Trigger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.18.RELEASE/spring-context-4.3.18.RELEASE-sources.jar!/org/springframework/scheduling/config/ScheduledTaskRegistrar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="237" column="39" selection-start-line="237" selection-start-column="31" selection-end-line="237" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="1873" column="16" selection-start-line="1873" selection-start-column="16" selection-end-line="1873" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4.jar!/org/apache/commons/lang3/concurrent/BasicThreadFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="103" column="42" selection-start-line="103" selection-start-column="42" selection-end-line="103" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.4/commons-lang3-3.4-sources.jar!/org/apache/commons/lang3/concurrent/BasicThreadFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="299" column="23" selection-start-line="299" selection-start-column="23" selection-end-line="299" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/concurrent/ScheduledThreadPoolExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="428" column="11" selection-start-line="428" selection-start-column="11" selection-end-line="428" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/TimerTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/Timer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="402" column="27" selection-start-line="402" selection-start-column="27" selection-end-line="402" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/concurrent/ScheduledExecutorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="153" column="30" selection-start-line="153" selection-start-column="30" selection-end-line="153" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/Date.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="272" column="11" selection-start-line="272" selection-start-column="11" selection-end-line="272" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.18.RELEASE/spring-context-4.3.18.RELEASE-sources.jar!/org/springframework/scheduling/annotation/SchedulingConfigurer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-schedule/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/task.java" />
+    <entry file="file://$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/MyScheduleApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/task/QuartzScheduleTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="50" column="74" selection-start-line="50" selection-start-column="74" selection-end-line="50" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/task/ScheduledExecetorServiceTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/timer/TimerScheduleTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-schedule/src/main/java/com/schedule/my/schedule/schedule/utils/TransformationUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mybatis-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1596">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-eureka-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-eureka-server/src/main/java/com/oeasycloud/myeurekaserver/MyEurekaServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mybatis-server/src/main/java/com/oeasycloud/mymybatisserver/dao/CityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-eureka-server/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/MqttProducerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-eureka-client/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-kafka-producer/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/resources/mqttconfig.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/config/PublishMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-consumer/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.0/org.eclipse.paho.client.mqttv3-1.2.0-sources.jar!/org/eclipse/paho/client/mqttv3/MqttCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/MyMqttConsumerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/utils/ServiceInfoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/config/MqttConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/service/IEmqService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/config/PushCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-274">
+          <caret line="14" column="77" selection-start-line="14" selection-start-column="77" selection-end-line="14" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-consumer/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/MyMqttProducerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/init/MyApplicationRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.0/org.eclipse.paho.client.mqttv3-1.2.0-sources.jar!/org/eclipse/paho/client/mqttv3/MqttClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="429" column="16" selection-start-line="429" selection-start-column="16" selection-end-line="429" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.0/org.eclipse.paho.client.mqttv3-1.2.0-sources.jar!/org/eclipse/paho/client/mqttv3/IMqttClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="311" column="14" selection-start-line="311" selection-start-column="14" selection-end-line="311" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/service/impl/IEmqServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="39" column="32" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/config/SubscribeConn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-295">
+          <caret line="26" column="26" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/controller/MQTTServerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/config/PushCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="33" lean-forward="true" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/config/MqttConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="57" lean-forward="true" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-consumer/src/main/java/com/my/mqtt/consumer/service/IEmqService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-mqtt-producer/src/main/java/com/my/mqtt/producer/service/impl/IEmqServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>my-config-server</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

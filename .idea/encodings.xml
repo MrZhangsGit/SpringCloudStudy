@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/my-config-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-eureka-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-eureka-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-feign-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-kafka-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-kafka-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-mqtt-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-mqtt-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-mqtt-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-mqtt-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-mybatis-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-redis-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-schedule" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-user-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-zuul-server" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: my-config-client
+  cloud:
+    config:
+      discovery:
+        service-id: my-config-server
+        enabled: true
+      uri: http://localhost:8770
+      profile: default
+      label: master
