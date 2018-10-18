@@ -21,7 +21,7 @@ mqtt:
   #超时时间 单位为秒
   connectionTimeout: 10
   #会话心跳时间 单位为秒
-  keepAliveInterval: 20
+  keepAliveInterval: 5
   #消息发布者clientId
   publishClientId: my_publish_01
   #消息订阅者clientId
