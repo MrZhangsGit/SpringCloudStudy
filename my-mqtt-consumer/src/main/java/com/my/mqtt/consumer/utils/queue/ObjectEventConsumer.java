@@ -2,6 +2,7 @@ package com.my.mqtt.consumer.utils.queue;
 
 import com.alibaba.fastjson.JSON;
 import com.lmax.disruptor.EventHandler;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 1.建Event类（数据对象）
@@ -10,10 +11,11 @@ import com.lmax.disruptor.EventHandler;
  * 4.实例化Disruptor，配置参数，绑定事件；
  * 5.建存放数据的核心 RingBuffer，生产的数据放入 RungBuffer。
  */
-
+@Slf4j
 public class ObjectEventConsumer implements EventHandler<ObjectEvent> {
     @Override
     public void onEvent(ObjectEvent objectEvent, long l, boolean b) throws Exception {
-        System.out.println("===事件消费者:" + JSON.toJSONString(objectEvent.getEvent()));
+        log.info("Disruptor===事件消费者:" + JSON.toJSONString(objectEvent.getEvent()));
+        Thread.sleep(10000);
     }
 }

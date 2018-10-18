@@ -22,7 +22,8 @@ mqtt:
   connectionTimeout: 10
   #会话心跳时间 单位为秒
   #若心跳时间过短，在消费端繁忙时会无法完成服务端的心跳回复导致服务端认为消费端下线而无法完成订阅
-  keepAliveInterval: 100
+  #可采用MQ接收端和消费端之间加上队列
+  keepAliveInterval: 5
   #消息发布者clientId
   publishClientId: my_publish_02
   #消息订阅者clientId

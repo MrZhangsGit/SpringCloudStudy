@@ -2,6 +2,7 @@ package com.my.mqtt.consumer.utils.queue;
 
 import com.alibaba.fastjson.JSON;
 import com.lmax.disruptor.RingBuffer;
+import lombok.extern.slf4j.Slf4j;
 
 import java.nio.ByteBuffer;
 
@@ -18,6 +19,7 @@ import java.nio.ByteBuffer;
  * 如果不能发布事件，那么就会引起Disruptor状态的混乱。
  * 尤其是在多个事件生产者的情况下会导致事件消费者失速，从而不得不重启应用才能会恢复。
  */
+@Slf4j
 public class ObjectEventProducer {
     private final RingBuffer<ObjectEvent> ringBuffer;
 
@@ -59,6 +61,7 @@ public class ObjectEventProducer {
             event.setEvent(content);
         } finally {
             ringBuffer.publish(sequence);
+            log.info("Disruptor===publish");
         }
     }
 }
