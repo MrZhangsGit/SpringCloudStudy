@@ -1,4 +1,4 @@
-package com.my.mqtt.consumer.config;
+package com.my.mqtt.consumer.config.mqttWapper;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

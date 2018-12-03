@@ -24,10 +24,6 @@ import java.util.*;
 
 /**
  * 时间格式化工具类。
- *
- * @Wenchao.L
- * @version 1.0
- * @date 15-3-24 下午5:04
  */
 public class DateUtil {
 

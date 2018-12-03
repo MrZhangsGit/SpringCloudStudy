@@ -1,8 +1,9 @@
-package com.my.mqtt.consumer.config;
+package com.my.mqtt.consumer.config.mqttWapper;
 
 import com.my.mqtt.consumer.utils.ServiceInfoUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.eclipse.paho.client.mqttv3.IMqttToken;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
@@ -68,7 +69,8 @@ public class SubscribeConn {
                 //setWill方法，如果项目中需要知道客户端是否掉线可以调用该方法。设置最终端口的通知消息
                 mqttConnectOptions.setWill(mqttTopic, "close".getBytes(), mqttConfiguration.getQos(), true);
             }*/
-            mqttClient.connect(mqttConnectOptions);
+//            mqttClient.connect(mqttConnectOptions);
+            IMqttToken iMqttToken = mqttClient.connectWithResult(mqttConnectOptions);
             log.info("连接服务器成功...");
 
         } catch (Exception e) {

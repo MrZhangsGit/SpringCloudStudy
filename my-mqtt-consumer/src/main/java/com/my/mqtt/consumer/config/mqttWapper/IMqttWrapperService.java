@@ -1,4 +1,4 @@
-package com.my.mqtt.consumer.service;
+package com.my.mqtt.consumer.config.mqttWapper;
 
 /**
  * <desc>
@@ -8,7 +8,7 @@ package com.my.mqtt.consumer.service;
  * @author zhangs
  * @createDate 2018/04/09
  */
-public interface IEmqService {
+public interface IMqttWrapperService {
     /**
      * 发布消息
      *

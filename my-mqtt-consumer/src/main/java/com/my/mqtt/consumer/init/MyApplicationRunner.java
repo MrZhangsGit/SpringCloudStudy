@@ -1,6 +1,6 @@
 package com.my.mqtt.consumer.init;
 
-import com.my.mqtt.consumer.service.IEmqService;
+import com.my.mqtt.consumer.service.IMqttSubscribe;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -18,13 +18,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyApplicationRunner implements ApplicationRunner {
     @Autowired
-    private IEmqService iEmqService;
+    private IMqttSubscribe iMqttSubscribe;
 
     String TOPIC = "MQTT_PRODUCER_TOPIC";
 
     @Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
         log.info(" MQTT Subscribe Server 开始...");
-        iEmqService.subscribe(TOPIC);
+        iMqttSubscribe.subscribe(TOPIC);
     }
 }

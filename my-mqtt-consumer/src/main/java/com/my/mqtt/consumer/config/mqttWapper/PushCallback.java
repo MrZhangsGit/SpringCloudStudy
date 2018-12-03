@@ -1,13 +1,11 @@
-package com.my.mqtt.consumer.config;
+package com.my.mqtt.consumer.config.mqttWapper;
 
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.YieldingWaitStrategy;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.ProducerType;
-import com.my.mqtt.consumer.utils.queue.ObjectEvent;
-import com.my.mqtt.consumer.utils.queue.ObjectEventConsumer;
-import com.my.mqtt.consumer.utils.queue.ObjectEventFactory;
-import com.my.mqtt.consumer.utils.queue.ObjectEventProducer;
+import com.my.mqtt.consumer.config.mqttWapper.SubscribeConn;
+import com.my.mqtt.consumer.utils.queue.*;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
@@ -47,10 +45,8 @@ public class PushCallback implements MqttCallback {
     @Autowired
     private SubscribeConn subscribeConn;
 
-    /**
-     * 创建缓冲池
-     */
-    ExecutorService executor = Executors.newCachedThreadPool();
+    @Autowired
+    private QueueHandleUtil queueHandleUtil;
 
     @Override
     public void connectionLost(Throwable cause) {
@@ -64,33 +60,12 @@ public class PushCallback implements MqttCallback {
         String content = new String(mqttMessage.getPayload());
         log.info("MQ消费者接收消息:" + content);
 //        Thread.sleep(10000);
-        this.advanceDisruptor(content);
+        queueHandleUtil.advanceDisruptor(content);
+//        queueHandleUtil.advanceDisruptor2(content);
     }
 
     @Override
     public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
         log.info("deliveryComplete:{}",iMqttDeliveryToken.isComplete());
-    }
-
-    private void advanceDisruptor(String content) {
-        /**
-         * 创建工厂
-         */
-        ObjectEventFactory factory = new ObjectEventFactory();
-        /**
-         * 创建bufferSize,即RingBuffer大小(必须是2的N次方)
-         */
-        int ringBufferSize = 1024 * 1024;
-        /**
-         * 创建disruptor
-         */
-        Disruptor<ObjectEvent> disruptor =
-                new Disruptor<ObjectEvent>(factory, ringBufferSize, executor, ProducerType.SINGLE, new YieldingWaitStrategy());
-        RingBuffer<ObjectEvent> ringBuffer = disruptor.getRingBuffer();
-        disruptor.handleEventsWith(new ObjectEventConsumer());
-        disruptor.start();
-        ObjectEventProducer producer = new ObjectEventProducer(ringBuffer);
-        log.info("MQ消费者将接收的消息放入Disruptor===content:" + content);
-        producer.onData(content);
     }
 }

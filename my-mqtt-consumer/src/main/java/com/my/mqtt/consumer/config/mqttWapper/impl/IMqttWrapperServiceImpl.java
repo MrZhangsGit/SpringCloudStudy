@@ -1,8 +1,8 @@
-package com.my.mqtt.consumer.service.impl;
+package com.my.mqtt.consumer.config.mqttWapper.impl;
 
-import com.my.mqtt.consumer.config.MqttConfiguration;
-import com.my.mqtt.consumer.config.SubscribeConn;
-import com.my.mqtt.consumer.service.IEmqService;
+import com.my.mqtt.consumer.config.mqttWapper.MqttConfiguration;
+import com.my.mqtt.consumer.config.mqttWapper.SubscribeConn;
+import com.my.mqtt.consumer.config.mqttWapper.IMqttWrapperService;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 @EnableConfigurationProperties({MqttConfiguration.class})
-public class IEmqServiceImpl implements IEmqService {
+public class IMqttWrapperServiceImpl implements IMqttWrapperService {
 
     @Autowired
     private MqttConfiguration mqttConfiguration;
