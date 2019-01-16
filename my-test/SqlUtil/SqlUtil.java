@@ -1,6 +1,7 @@
 package SqlUtil;
 
 import DateUtil.DateUtil;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -165,5 +166,26 @@ public class SqlUtil {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    /**
+     * 校验SQL注入是否通过
+     * @param content 检测内容
+     * @return
+     * @author zhangs
+     * @createDate 2019/01/04
+     */
+    public static boolean preventSQLInjection(String content) {
+        if (StringUtils.isEmpty(content)) {
+            return true;
+        }
+        String regular = ".*([';]+|(--)+).*";
+
+        int beforeLength = content.length();
+        int afterLength = content.replaceAll(regular, "").length();
+        if (beforeLength == afterLength) {
+            return true;
+        }
+        return false;
     }
 }

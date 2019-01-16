@@ -1,9 +1,9 @@
+import SqlUtil.SqlUtil;
 import com.alibaba.fastjson.JSON;
 import lombok.Data;
+import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * @author zhangs
@@ -39,8 +39,19 @@ public class Test {
         deviceIds.add("789");
         deviceIds.add("abc");
         System.out.println(JSON.toJSONString(deviceIds));*/
-        String projectKey = UUID.randomUUID().toString().replace("-", "").substring(0, 16);
-        System.out.println(projectKey.length());
+        /*String projectKey = UUID.randomUUID().toString().replace("-", "").substring(0, 16);
+        System.out.println(projectKey.length());*/
+
+        /*System.out.println(UUID.randomUUID().toString().replace("-", ""));*/
+        /*String user = "' or 1 = 1 -- ";
+        System.out.println(":::" + user.replaceAll(".*([';]+|(--)+).*", " "));*/
+        /*String content = "{1}";
+        System.out.println(content.replaceAll("\\{", ""));
+        System.out.println(content.replaceAll("\\}", ""));*/
+        /*String content = "{}";
+        System.out.println(SqlUtil.preventSQLInjection(content));*/
+        /*Map<String, Object> groupMap = new HashMap<>();
+        System.out.println(CollectionUtils.isEmpty(groupMap));*/
     }
 }
 

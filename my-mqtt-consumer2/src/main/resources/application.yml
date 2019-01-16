@@ -1,0 +1,41 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8780
+spring:
+  application:
+    name: my-mqtt-consumer2
+mqtt:
+#  host: tcp://192.168.85.128:1883
+  host: tcp://192.168.0.21:1883
+  username: admin
+  password: public
+  #服务质量
+  #0代表“至多一次”，消息发布完全依赖底层 TCP/IP 网络。会发生消息丢失或重复。这一级别可用于如下情况，环境传感器数据，丢失一次读记录无所谓，因为不久后还会有第二次发送。
+  #1代表“至少一次”，确保消息到达，但消息重复可能会发生。
+  #2代表“只有一次”，确保消息到达一次。这一级别可用于如下情况，在计费系统中，消息重复或丢失会导致不正确的结果。
+  qos: 1
+  #服务器列表,多个以英文逗号拼接
+  hosts: tcp://192.168.85.128:1883
+  #超时时间 单位为秒
+  connectionTimeout: 20
+  #会话心跳时间 单位为秒
+  #若心跳时间过短，在消费端繁忙时会无法完成服务端的心跳回复导致服务端认为消费端下线而无法完成订阅
+  #可采用MQ接收端和消费端之间加上队列
+  keepAliveInterval: 60
+  #消息发布者clientId
+  publishClientId: my_publish_03
+  #消息订阅者clientId
+  subscribeClientId: my_subscribe_03
+  #会话设置
+  session:
+    #核心发布会话数
+    corePublishSize: 5
+    #最大发布会话数
+    maxPublishSize: 5
+    #核心订阅会话数
+    coreSubscribeSize: 5
+    #最大订阅会话数
+    maxSubscribeSize: 5

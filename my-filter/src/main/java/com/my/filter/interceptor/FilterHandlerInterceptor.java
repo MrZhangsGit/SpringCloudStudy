@@ -1,12 +1,16 @@
-package com.my.filter.filter;
+package com.my.filter.interceptor;
 
+import com.alibaba.fastjson.JSON;
+import com.my.filter.util.HttpHelper;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.core.NamedThreadLocal;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 
 /**
@@ -38,7 +42,18 @@ public class FilterHandlerInterceptor implements HandlerInterceptor {
         long beginTime = System.currentTimeMillis();
         startTimeThreadLocal.set(beginTime);
         log.info("开始计时: {}  URI: {}", new SimpleDateFormat("hh:mm:ss.SSS").format(beginTime), httpServletRequest.getRequestURI());
-        System.out.println(httpServletRequest.getParameterMap().toString());
+        /*System.out.println("1:" + httpServletRequest.getParameterMap().toString());
+        System.out.println("2:" + HttpHelper.getRequestBody(httpServletRequest.getInputStream()));
+        System.out.println("3:" + httpServletRequest.getSession().getAttribute("content"));
+        System.out.println("4:" + httpServletRequest.getContentLength());
+        //获取post请求form表单中的数据
+        System.out.println("5:" + httpServletRequest.getParameter("content"));*/
+        //获取post请求Body中的Json数据
+        //System.out.println("6" + JSON.toJSONString(HttpHelper.getRequestBody(httpServletRequest.getInputStream())));
+        boolean result = this.preventSQLInjection(httpServletRequest);
+        if (!result) {
+            return false;
+        }
 
         /**
          * 只有返回true才会继续向下执行，返回false取消当前请求
@@ -86,5 +101,47 @@ public class FilterHandlerInterceptor implements HandlerInterceptor {
         log.info("计时结束：{}  耗时：{}ms  URI: {}", new SimpleDateFormat("hh:mm:ss.SSS").format(endTime),
                 (endTime - beginTime), httpServletRequest.getRequestURI());
         startTimeThreadLocal.remove();
+    }
+
+    /**
+     * 校验SQL注入是否通过
+     * @param request
+     * @return
+     * @author zhangs
+     * @createDate 2019/01/04
+     */
+    private boolean preventSQLInjection(HttpServletRequest request) {
+        try {
+            InputStream inputStream = request.getInputStream();
+            String body = HttpHelper.getRequestBody(inputStream);
+            log.info("{}::校验SQL注入是否通过 Body::{}", Thread.currentThread().getStackTrace()[1].getMethodName() ,
+                    JSON.toJSONString(body));
+            return preventSQLInjection(body);
+        } catch (Exception e) {
+            log.info("{}::校验SQL注入是否通过出错 ERROR::{}", Thread.currentThread().getStackTrace()[1].getMethodName() ,
+                    JSON.toJSONString(e));
+        }
+        return false;
+    }
+
+    /**
+     * 校验SQL注入是否通过
+     * @param content 检测内容
+     * @return
+     * @author zhangs
+     * @createDate 2019/01/04
+     */
+    public static boolean preventSQLInjection(String content) {
+        if (StringUtils.isEmpty(content)) {
+            return true;
+        }
+        String regular = ".*([';]+|(--)+).*";
+
+        int beforeLength = content.length();
+        int afterLength = content.replaceAll(regular, "").length();
+        if (beforeLength == afterLength) {
+            return true;
+        }
+        return false;
     }
 }

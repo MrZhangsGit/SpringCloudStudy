@@ -1,4 +1,4 @@
-package com.my.filter.filter;
+package com.my.filter.interceptor;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
