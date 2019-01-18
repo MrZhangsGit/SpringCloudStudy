@@ -8,6 +8,6 @@ spring:
   application:
     name: my-schedule
   datasource:
-    url:  jdbc:mysql://localhost:3306/db_dmmdl?useSSL=false
+    url:  jdbc:mysql://localhost:3306/db_dmmdl_schedule?useSSL=false
     username: root
     password: 123456

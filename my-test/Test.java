@@ -52,6 +52,8 @@ public class Test {
         System.out.println(SqlUtil.preventSQLInjection(content));*/
         /*Map<String, Object> groupMap = new HashMap<>();
         System.out.println(CollectionUtils.isEmpty(groupMap));*/
+        Date time = new Date("2019/01/17 9:49:06");
+        System.out.println(time);
     }
 }
 

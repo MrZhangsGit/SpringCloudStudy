@@ -1,12 +1,14 @@
-package com.schedule.my.schedule;
+package my.antlr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyScheduleApplication {
+public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MyScheduleApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
+
 }
+
