@@ -23,11 +23,10 @@ public class TransformationUtils {
     /**
      * 日期转换成cron表达式
      * @param date
-     * @param dateFormat e.g:yyyy-MM-dd HH:mm:ss
      * @return
      */
-    public static String formatDateByPattern(Date date, String dateFormat) {
-        SimpleDateFormat format = new SimpleDateFormat(dateFormat);
+    public static String formatDateByPattern(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat(TASK_DATE_FORMAT);
         String formatTimeStr = null;
         if (date != null) {
             formatTimeStr = format.format(date);

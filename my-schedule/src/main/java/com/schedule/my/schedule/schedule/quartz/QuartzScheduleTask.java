@@ -1,5 +1,6 @@
 package com.schedule.my.schedule.schedule.quartz;
 
+import com.schedule.my.schedule.schedule.utils.TransformationUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -35,11 +36,14 @@ public class QuartzScheduleTask implements SchedulingConfigurer {
      * 执行定时任务。读取数据库中存储的cron表达式执行定时任务
      * @param scheduledTaskRegistrar
      * 添加的是TriggerTask，目的循环读取数据库中设置好的执行周期
+     *
+     * 这个解析cron的地方只支持六位！“Quartz”根本就不是“Quartz” （项目名字就是  Company_Quartz），实际是Spring Task。
+     * Spring Task是Quartz的弱版，quartz支持年份，而Spring Task不支持。
      */
     @Override
     public void configureTasks(ScheduledTaskRegistrar scheduledTaskRegistrar) {
-        /*Date date = new Date();
-        Date time = new Date("2018/7/6/ 9:49:06");
+        Date date = new Date();
+        Date time = new Date("2019/1/23 11:26:05");
         System.out.println("进入Quartz定时任务" + date);
         //1.添加任务内容(Runnable)
         scheduledTaskRegistrar.addTriggerTask(new Runnable() {
@@ -51,21 +55,27 @@ public class QuartzScheduleTask implements SchedulingConfigurer {
         }, new Trigger() {
             @Override
             public Date nextExecutionTime(TriggerContext triggerContext) {
-                *//**
+                /**
                  * 注:此处实为Spring Task，不支持年份，所以cron只有6个域
-                 *//*
+                 */
                 //2.1 从数据库获取执行周期
-                String cron = cronMapper.getCron();
-                *//*String cron = "06 50 09 06 07 ?";*//*
-                *//*String cron = TransformationUtils.formatDateByPattern(time, "ss mm HH dd MM ? yyyy");*//*
+                //String cron = cronMapper.getCron();
+                String cron = "06 50 09 06 07 ?";
+                //String cron = TransformationUtils.formatDateByPattern(time);
                 System.out.println("====Cron:" + cron);
                 //2.2 合法性校验.
                 if (StringUtils.isEmpty(cron)) {
-                    // Omitted Code ..
+                    System.out.println("===Cron不可为空!");
                 }
+                int oCronLength = cron.length();
+                cron.replaceAll(" ", "");
+                if ((oCronLength - cron.length()) > 5) {
+                    System.out.println("===Cron不支持(超过6位)!");
+                }
+
                 //2.3 返回执行周期(Date)
                 return new CronTrigger(cron).nextExecutionTime(triggerContext);
             }
-        });*/
+        });
     }
 }
