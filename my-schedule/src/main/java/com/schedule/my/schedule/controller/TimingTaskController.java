@@ -1,7 +1,7 @@
 package com.schedule.my.schedule.controller;
 
 import com.schedule.my.schedule.po.TaskMO;
-import com.schedule.my.schedule.schedule.task.ScheduledExecetorServiceTask;
+import com.schedule.my.schedule.schedule.task.ScheduledExecutorServiceTask;
 import com.schedule.my.schedule.schedule.timer.TimerScheduleTask;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class TimingTaskController {
     private TimerScheduleTask timerScheduleTask;
 
     @Autowired
-    private ScheduledExecetorServiceTask scheduledExecetorServiceTask;
+    private ScheduledExecutorServiceTask scheduledExecutorServiceTask;
 
     @RequestMapping(value = "/timer/start")
     public void timerStart(@RequestBody TaskMO task) {
@@ -49,12 +49,12 @@ public class TimingTaskController {
     @RequestMapping(value = "/schedule/delay")
     public void scheduleDelay(@RequestBody TaskMO task) {
         log.info("{}...延迟指定时间后执行指定任务", LocalDateTime.now().toLocalTime());
-        scheduledExecetorServiceTask.delayExecute(task);
+        scheduledExecutorServiceTask.delayExecute(task);
     }
 
     @RequestMapping(value = "/schedule/period")
     public void schedulePeriod(@RequestBody TaskMO task) {
         log.info("{}...时间段内执行指定任务", LocalDateTime.now().toLocalTime());
-        scheduledExecetorServiceTask.periodExecute(task);
+        scheduledExecutorServiceTask.periodExecute(task);
     }
 }

@@ -26,6 +26,9 @@ public class IEmqServiceImpl implements IEmqService {
         log.info("MQ===public=== 入参:topic:{};content:{}", topic, content);
         MqttMessage message = new MqttMessage(content.getBytes());
         message.setQos(mqttConfiguration.getQos());
+        /**
+         * Retained为true时MQ会保留最后一条发送的数据，当断开再次订阅即会接收到这最后一次的数据
+         */
         message.setRetained(true);
         try {
             MqttClient mqttClient = this.connect(mqttConfiguration.getPublishClientId(), mqttConfiguration.getUsername(),

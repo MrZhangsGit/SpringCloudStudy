@@ -1,9 +1,5 @@
-import SqlUtil.SqlUtil;
 import com.alibaba.fastjson.JSON;
-import lombok.Data;
-import org.springframework.util.CollectionUtils;
-
-import java.util.*;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author zhangs
@@ -52,8 +48,15 @@ public class Test {
         System.out.println(SqlUtil.preventSQLInjection(content));*/
         /*Map<String, Object> groupMap = new HashMap<>();
         System.out.println(CollectionUtils.isEmpty(groupMap));*/
-        Date time = new Date("2019/01/17 9:49:06");
-        System.out.println(time);
+        /*Date time = new Date("2019/01/17 9:49:06");
+        System.out.println(time);*/
+        /*List<String> projectIds = new ArrayList<>();
+        projectIds.add("23349d43fd0547ff");
+        System.out.println(JSON.toJSONString(projectIds));*/
+        /*Device device = new Device();
+        if (StringUtils.isBlank(device.getDeviceId())) {
+            System.out.println(123);
+        }*/
     }
 }
 

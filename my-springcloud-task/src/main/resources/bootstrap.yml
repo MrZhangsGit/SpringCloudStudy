@@ -3,11 +3,12 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 server:
-  port: 8770
+  port: 8771
 spring:
   application:
-    name: my-schedule
+    name: my-springcloud-task
   datasource:
     url:  jdbc:mysql://localhost:3306/db_dmmdl_schedule?useSSL=false
     username: root
     password: 123456
+

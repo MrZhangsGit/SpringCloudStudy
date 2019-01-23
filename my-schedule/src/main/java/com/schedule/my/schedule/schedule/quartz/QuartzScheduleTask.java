@@ -1,4 +1,4 @@
-package com.schedule.my.schedule.schedule.task;
+package com.schedule.my.schedule.schedule.quartz;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.ibatis.annotations.Mapper;

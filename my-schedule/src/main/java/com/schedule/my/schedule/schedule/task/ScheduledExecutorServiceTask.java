@@ -28,7 +28,7 @@ import java.util.concurrent.*;
  */
 @Component
 @Slf4j
-public class ScheduledExecetorServiceTask {
+public class ScheduledExecutorServiceTask {
     static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
     private static ScheduledExecutorService scheduledExecutorService = new ScheduledThreadPoolExecutor(5);
