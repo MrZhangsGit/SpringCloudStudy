@@ -1,13 +1,13 @@
 package com.schedule.my.schedule.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.schedule.my.schedule.po.TaskMO;
+import com.schedule.my.schedule.schedule.quartz.QuartzScheduleTaskDemo;
 import com.schedule.my.schedule.schedule.task.ScheduledExecutorServiceTask;
 import com.schedule.my.schedule.schedule.timer.TimerScheduleTask;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
@@ -25,6 +25,9 @@ public class TimingTaskController {
 
     @Autowired
     private ScheduledExecutorServiceTask scheduledExecutorServiceTask;
+
+    @Autowired
+    private QuartzScheduleTaskDemo quartzScheduleTaskDemo;
 
     @RequestMapping(value = "/timer/start")
     public void timerStart(@RequestBody TaskMO task) {
@@ -56,5 +59,11 @@ public class TimingTaskController {
     public void schedulePeriod(@RequestBody TaskMO task) {
         log.info("{}...时间段内执行指定任务", LocalDateTime.now().toLocalTime());
         scheduledExecutorServiceTask.periodExecute(task);
+    }
+
+    @RequestMapping(value = "/testTask", method = RequestMethod.GET)
+    public void testTask(@RequestParam String cronTask) {
+        log.info("{}---Start---入参:{}", Thread.currentThread().getStackTrace()[1].getMethodName(), JSON.toJSONString(cronTask));
+        quartzScheduleTaskDemo.task(cronTask);
     }
 }
