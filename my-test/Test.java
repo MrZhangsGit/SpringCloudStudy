@@ -1,6 +1,8 @@
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.StringUtils;
 
+import java.time.LocalDate;
+
 /**
  * @author zhangs
  * @Description
@@ -57,6 +59,14 @@ public class Test {
         if (StringUtils.isBlank(device.getDeviceId())) {
             System.out.println(123);
         }*/
+        /*System.out.println("main:" + Thread.currentThread().getName());
+        System.out.println("main:" + Thread.currentThread().getStackTrace()[1].getMethodName());
+        test();*/
+    }
+
+    public static void test() {
+        System.out.println("test:" + Thread.currentThread().getName());
+        System.out.println("test:" + Thread.currentThread().getStackTrace()[1].getMethodName());
     }
 }
 
