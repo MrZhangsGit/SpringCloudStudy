@@ -8,3 +8,6 @@ server:
 spring:
   application:
     name: my-eureka-server
+  data:
+    mongodb:
+      uri: mongodb://user:pwd@localhost:27017/database

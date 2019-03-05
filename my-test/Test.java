@@ -1,9 +1,12 @@
 import com.alibaba.fastjson.JSON;
 import javafx.scene.control.Cell;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.*;
 
 /**
@@ -643,6 +646,82 @@ class AtomicDemo {
     }
 
     public static void main(String[] args) {
-        AtomicLongFieldUpdateTest();
+        //AtomicLongFieldUpdateTest();
+
+        List<AutomaticDemo> automaticDemos = new ArrayList<>();
+
+        AutomaticDemo automaticDemo = new AutomaticDemo();
+        automaticDemo.setAutomaticKey("2019022701");
+        List<DevState> devStates = new ArrayList<>();
+        DevState devState = new DevState();
+        devState.setStateCode("online");
+        devState.setStateValue("true");
+        devStates.add(devState);
+        devState = new DevState();
+        devState.setStateCode("onoff");
+        devState.setStateValue(0);
+        devStates.add(devState);
+        automaticDemo.setDevStates(devStates);
+        automaticDemos.add(automaticDemo);
+
+        automaticDemo = new AutomaticDemo();
+        automaticDemo.setAutomaticKey("2019022702");
+        devStates = new ArrayList<>();
+        devState = new DevState();
+        devState.setStateCode("online");
+        devState.setStateValue(0);
+        devStates.add(devState);
+        automaticDemo.setDevStates(devStates);
+        automaticDemos.add(automaticDemo);
+
+        System.out.println(JSON.toJSONString(automaticDemos));
+    }
+}
+
+class AutomaticDemo {
+    private String automaticKey;
+    private List<DevState> devStates;
+
+    public AutomaticDemo() {
+    }
+
+    public String getAutomaticKey() {
+        return automaticKey;
+    }
+
+    public void setAutomaticKey(String automaticKey) {
+        this.automaticKey = automaticKey;
+    }
+
+    public List<DevState> getDevStates() {
+        return devStates;
+    }
+
+    public void setDevStates(List<DevState> devStates) {
+        this.devStates = devStates;
+    }
+}
+
+class DevState {
+    private String stateCode;
+    private Object stateValue;
+
+    public DevState() {
+    }
+
+    public String getStateCode() {
+        return stateCode;
+    }
+
+    public void setStateCode(String stateCode) {
+        this.stateCode = stateCode;
+    }
+
+    public Object getStateValue() {
+        return stateValue;
+    }
+
+    public void setStateValue(Object stateValue) {
+        this.stateValue = stateValue;
     }
 }
