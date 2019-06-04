@@ -144,4 +144,12 @@ public class MyRedisServerApplicationTests {
 	public void hashSize() {
 		System.out.println(stringRedisTemplate.opsForHash().size("map"));
 	}
+
+	/**
+	 * 使用redis进行发布订阅
+	 */
+	@Test
+	public void sendMessage() {
+		stringRedisTemplate.convertAndSend("index", String.valueOf(new Date()));
+	}
 }
