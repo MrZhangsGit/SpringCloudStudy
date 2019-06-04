@@ -21,6 +21,10 @@
         WHERE city_name = #{cityName}
     </select>
 
+    <delete id="delById" parameterType="java.lang.String">
+        DELETE FROM city WHERE id = #{id}
+    </delete>
+
     <insert id="saveCity" parameterType="java.util.Map">
         INSERT INTO city(province_id, city_name, description) VALUES (#{provinceId}, #{cityName}, #{description})
     </insert>

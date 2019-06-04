@@ -1,13 +1,13 @@
 import com.alibaba.fastjson.JSON;
-import javafx.scene.control.Cell;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.client.RestTemplate;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.security.MessageDigest;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.concurrent.atomic.*;
+import java.util.regex.Pattern;
 
 /**
  * @author zhangs
@@ -648,7 +648,7 @@ class AtomicDemo {
     public static void main(String[] args) {
         //AtomicLongFieldUpdateTest();
 
-        List<AutomaticDemo> automaticDemos = new ArrayList<>();
+        /*List<AutomaticDemo> automaticDemos = new ArrayList<>();
 
         AutomaticDemo automaticDemo = new AutomaticDemo();
         automaticDemo.setAutomaticKey("2019022701");
@@ -674,7 +674,138 @@ class AtomicDemo {
         automaticDemo.setDevStates(devStates);
         automaticDemos.add(automaticDemo);
 
-        System.out.println(JSON.toJSONString(automaticDemos));
+        System.out.println(JSON.toJSONString(automaticDemos));*/
+        /*String cron = "2-3 0/5 14,18 * * ?";
+        String secondStr = cron.substring(0, cron.indexOf(" "));
+        cron = cron.substring(cron.indexOf(" ") + 1);
+
+        String minuteStr = cron.substring(0, cron.indexOf(" "));
+        cron = cron.substring(cron.indexOf(" ") + 1);
+
+        String hourStr = cron.substring(0, cron.indexOf(" "));
+
+        Map<String, Integer> timeCronMap = new HashMap<>();
+        if (StringUtils.isNumeric(secondStr)) {
+            timeCronMap.put("second", Integer.parseInt(secondStr));
+        } else {
+            StringBuffer stringBuffer = new StringBuffer();
+            for (int i=0;i<secondStr.length();i++) {
+                String index = secondStr.substring(i, i + 1);
+                if (StringUtils.isNumeric(index)) {
+                    stringBuffer.append(index);
+                } else {
+                    i = secondStr.length();
+                }
+            }
+            if (StringUtils.isNumeric(stringBuffer.toString())) {
+                timeCronMap.put("second", Integer.parseInt(stringBuffer.toString()));
+            }
+        }
+        System.out.println(JSON.toJSONString(timeCronMap));*/
+
+        /*List<String> strList = new ArrayList<>();
+        List<Integer> intList = new ArrayList<>();
+
+        Class strClass = strList.getClass();
+        Class intClass = intList.getClass();
+
+        if (strClass.equals(intClass)) {
+            System.out.println("1泛型测试:类型相同");
+        }
+        if (strClass == intClass) {
+            System.out.println("2泛型测试:类型相同");
+        }*/
+        /*List<String> deviceIds = new ArrayList<>();
+        deviceIds.add("123");
+        System.out.println(JSON.toJSONString(deviceIds));*/
+        /*String content = "{\n" +
+                "    \"automaticName\": \"测试\",\n" +
+                "    \"automaticType\": 1,\n" +
+                "    \"automaticState\": \"1\",\n" +
+                "    \"combType\": 1,\n" +
+                "    \"triggerConditions\": [],\n" +
+                "    \"outputValues\": [],\n" +
+                "    \"icon\": \"0\"\n" +
+                "}";
+        System.out.println(stringToMd5(content));*/
+
+    }
+
+
+
+    public static String stringToMd5(String input) {
+        try {
+            //拿到一个MD5转换器（如果想要SHA1加密参数换成"SHA1"）
+            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            byte[] inputByteArray = input.getBytes();
+            messageDigest.update(inputByteArray);
+            byte[] resultByteArray = messageDigest.digest();
+            return byteArrayToHex(resultByteArray);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private static String byteArrayToHex(byte[] byteArray){
+        char[] hexDigits = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+        char[] resultCharArray = new char[byteArray.length*2];
+        int index = 0;
+        for(byte b : byteArray){
+            resultCharArray[index++] = hexDigits[b>>> 4 & 0xf];
+            resultCharArray[index++] = hexDigits[b& 0xf];
+        }
+
+        return new String(resultCharArray);
+    }
+
+    public static Map quartzTranslateToTime(String cron) {
+        if (StringUtils.isEmpty(cron)) {
+            return null;
+        }
+        Map<String, Integer> timeCronMap = new HashMap<>();
+
+        String secondStr = cron.substring(0, cron.indexOf(" "));
+        timeCronMap.put("second", getNumber(secondStr));
+        cron = cron.substring(cron.indexOf(" ") + 1);
+
+        String minuteStr = cron.substring(0, cron.indexOf(" "));
+        timeCronMap.put("minute", getNumber(minuteStr));
+        cron = cron.substring(cron.indexOf(" ") + 1);
+
+        String hourStr = cron.substring(0, cron.indexOf(" "));
+        timeCronMap.put("hour", getNumber(hourStr));
+
+        return timeCronMap;
+    }
+    private static Integer getNumber(String content) {
+        if (StringUtils.isNumeric(content)) {
+            return Integer.parseInt(content);
+        } else {
+            StringBuffer stringBuffer = new StringBuffer();
+            for (int i=0;i<content.length();i++) {
+                String index = content.substring(i, i + 1);
+                if (StringUtils.isNumeric(index)) {
+                    stringBuffer.append(index);
+                } else {
+                    i = content.length();
+                }
+            }
+            if (StringUtils.isNumeric(stringBuffer.toString())) {
+                return Integer.parseInt(stringBuffer.toString());
+            } else {
+                return 0;
+            }
+        }
+    }
+
+
+    public static String formatDateByPattern(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("ss mm HH dd MM ?");
+        String formatTimeStr = null;
+        if (date != null) {
+            formatTimeStr = format.format(date);
+        }
+        return formatTimeStr;
     }
 }
 

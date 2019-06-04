@@ -1,13 +1,13 @@
 eureka:
   client:
     serviceUrl:
-#      defaultZone: http://localhost:8761/eureka/
-      defaultZone: http://192.168.20.17:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://192.168.20.17:8761/eureka/
 server:
   port: 8766
 spring:
   application:
-    name: my-eureka-server
-  data:
-    mongodb:
-      uri: mongodb://user:pwd@localhost:27017/database
+    name: my-mybatis-server
+#  data:
+#    mongodb:
+#      uri: mongodb://user:pwd@localhost:27017/database

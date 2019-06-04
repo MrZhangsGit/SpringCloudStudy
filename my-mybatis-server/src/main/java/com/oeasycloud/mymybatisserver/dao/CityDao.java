@@ -23,4 +23,6 @@ public interface CityDao {
      * @return
      */
     Integer saveCity(Map<String, Object> params);
+
+    Integer del(@Param("id") String id);
 }

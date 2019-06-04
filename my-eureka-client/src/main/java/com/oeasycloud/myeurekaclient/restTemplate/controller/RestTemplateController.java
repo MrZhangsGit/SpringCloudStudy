@@ -15,6 +15,7 @@ import java.util.List;
 /**
  * @author zhangs
  * @Description restTemplateDemo
+ *      RestTemplate是Spring提供的用于访问Rest服务的客户端
  * @createDate 2019/1/16
  */
 @RestController
@@ -31,6 +32,7 @@ public class RestTemplateController {
     @RequestMapping(value = "/rest/getAll")
     public List<UserEntity> getAll() {
         List<UserEntity> list = restTemplate.getForObject(URL +"/getAll", List.class);
+        //访问UserController中的getUser
         return list;
     }
 

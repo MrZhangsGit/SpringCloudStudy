@@ -17,19 +17,19 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserDaoImpl implements UserDao {
 
-    @Autowired
-    private MongoTemplate mongoTemplate;
+//    @Autowired
+//    private MongoTemplate mongoTemplate;
 
     @Override
     public void saveUser(UserEntity user) {
-        mongoTemplate.save(user);
+//        mongoTemplate.save(user);
     }
 
     @Override
     public UserEntity findUserByUserName(String userName) {
-        Query query = new Query(Criteria.where("userName").is(userName));
-        UserEntity userEntity = mongoTemplate.findOne(query, UserEntity.class);
-        return userEntity;
+//        Query query = new Query(Criteria.where("userName").is(userName));
+//        UserEntity userEntity = mongoTemplate.findOne(query, UserEntity.class);
+        return new UserEntity();
     }
 
     @Override
@@ -40,7 +40,7 @@ public class UserDaoImpl implements UserDao {
         /**
          * 更新查询返回结果集的第一条
          */
-        mongoTemplate.updateFirst(query, update, UserEntity.class);
+//        mongoTemplate.updateFirst(query, update, UserEntity.class);
         /**
          * 更新查询返回结果集的所有
          * mongoTemplate.updateMulti(query, update, UserEntity.class);
@@ -50,6 +50,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void deleteUserById(Long id) {
         Query query = new Query(Criteria.where("id").is(id));
-        mongoTemplate.remove(query, UserEntity.class);
+//        mongoTemplate.remove(query, UserEntity.class);
     }
 }
