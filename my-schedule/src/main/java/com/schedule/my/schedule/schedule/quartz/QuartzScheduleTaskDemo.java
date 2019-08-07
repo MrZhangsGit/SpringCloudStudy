@@ -45,7 +45,7 @@ public class QuartzScheduleTaskDemo implements SchedulingConfigurer {
      */
     @Override
     public void configureTasks(ScheduledTaskRegistrar scheduledTaskRegistrar) {
-        /*Date date = new Date();
+        Date date = new Date();
         Date time = new Date("2019/1/23 11:26:05");
         System.out.println("进入Quartz定时任务" + date);
         //1.添加任务内容(Runnable)
@@ -58,9 +58,9 @@ public class QuartzScheduleTaskDemo implements SchedulingConfigurer {
         }, new Trigger() {
             @Override
             public Date nextExecutionTime(TriggerContext triggerContext) {
-                *//**
+                /**
                  * 注:此处实为Spring Task，不支持年份，所以cron只有6个域
-                 *//*
+                  */
                 //从数据库获取执行周期
                 //String cron = cronMapper.getCron();
                 String cron = "10 31 16 24 01 ?";
@@ -79,7 +79,7 @@ public class QuartzScheduleTaskDemo implements SchedulingConfigurer {
                 //返回执行周期(Date)
                 return new CronTrigger(cron).nextExecutionTime(triggerContext);
             }
-        });*/
+        });
     }
 
     public void task(String cronTask) {

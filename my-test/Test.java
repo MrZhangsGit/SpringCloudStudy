@@ -758,7 +758,7 @@ class AtomicDemo {
         return new String(resultCharArray);
     }
 
-    public static Map quartzTranslateToTime(String cron) {
+    /*public static Map quartzTranslateToTime(String cron) {
         if (StringUtils.isEmpty(cron)) {
             return null;
         }
@@ -796,7 +796,7 @@ class AtomicDemo {
                 return 0;
             }
         }
-    }
+    }*/
 
 
     public static String formatDateByPattern(Date date) {
