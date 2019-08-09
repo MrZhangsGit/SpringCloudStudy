@@ -258,14 +258,6 @@ public class Test2 {
     }
 
     @Test
-    public void testDevAlert() {
-        DevAlertPushTemplateDTO devAlertPushTemplateDTO = new DevAlertPushTemplateDTO();
-        devAlertPushTemplateDTO.setDeviceName("devName");
-        devAlertPushTemplateDTO.setTemplateKey("123456");
-        System.out.println(JSON.toJSONString(devAlertPushTemplateDTO));
-    }
-
-    @Test
     public void testBuffer() {
         StringBuffer stringBuffer = new StringBuffer();
         /*System.out.println(StringUtils.isNoneEmpty(stringBuffer));
