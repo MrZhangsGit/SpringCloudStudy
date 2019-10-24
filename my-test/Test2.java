@@ -1,10 +1,6 @@
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
-import org.luaj.vm2.ast.Str;
-import org.springframework.util.CollectionUtils;
-
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
@@ -277,13 +273,11 @@ public class Test2 {
 
     @Test
     public void testMap() {
-        Map<String, String> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
         map.put("123", "abc");
         map.put("456", "def");
         map.put("789", "ghi");
-        String str = JSON.toJSONString(map);
-        System.out.println(str);
-        Map<String, String> map2 = JSON.parseObject(str, Map.class);
-        System.out.println(map2.keySet());
+        System.out.println("abc".equals(map.get("123")));
     }
+
 }
