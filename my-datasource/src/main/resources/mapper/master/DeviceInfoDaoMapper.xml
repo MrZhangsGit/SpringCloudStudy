@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="my.datasource.dao.master.DeviceMasterMapper">
+    <resultMap id="DeviceInfoResultMap" type="my.datasource.po.DeviceInfoPO">
+        <result column="device_id" property="deviceId"/>
+        <result column="sn" property="sn"/>
+        <result column="is_direct" property="isDirect"/>
+        <result column="device_sn" property="deviceSn"/>
+        <result column="fac_sign" property="facSign"/>
+        <result column="product_key" property="productKey"/>
+        <result column="device_type" property="deviceType"/>
+        <result column="device_name" property="deviceName"/>
+        <result column="mac" property="mac"/>
+        <result column="ip" property="ip"/>
+        <result column="port_num" property="portNum"/>
+        <result column="description" property="description"/>
+        <result column="product_version" property="productVersion"/>
+        <result column="firmware_version" property="firmwareVersion"/>
+        <result column="longitude" property="longitude"/>
+        <result column="latitude" property="latitude"/>
+        <result column="altitude" property="altitude"/>
+        <result column="deploy_status" property="deployStatus"/>
+        <result column="online_state" property="onlineState"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <select id="getOne" parameterType="java.lang.String" resultMap="DeviceInfoResultMap">
+        SELECT * FROM device_info
+        WHERE device_id = #{deviceId}
+    </select>
+
+</mapper>

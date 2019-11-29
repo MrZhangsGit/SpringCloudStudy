@@ -50,18 +50,85 @@ public class Test3 {
 
     @Test
     public void testSet() {
-        List<String> list = new ArrayList<>();
+        /*List<String> list = new ArrayList<>();
         if (!CollectionUtils.isEmpty(list)) {
             Set<String> set = new HashSet<>(list);
             System.out.println(JSON.toJSONString(set));
         }
-        System.out.println("end");
+        System.out.println("end");*/
+        /*Set<String> set = new HashSet<>();
+        set.add("123");
+        set.add("abc");
+        for (String str:set) {
+            System.out.println(str);
+        }*/
+        Object object = true;
+        System.out.println(JSON.toJSONString(object));
+        System.out.println(String.valueOf(object));
     }
 
     @Test
     public void testPattern() {
-        System.out.println(!Pattern.matches("^[" + 2 + "]|[" + 3 + "]$",
-                String.valueOf(2)));
+        /*System.out.println(!Pattern.matches("^[" + 2 + "]|[" + 3 + "]$",
+                String.valueOf(2)));*/
+        Map<String, Set<String>> eventByPreset = new HashMap<>();
+        Set<String> eventSet = new HashSet<>();
+        Map<String, Object> map = new HashMap<>();
+        map.put("key", "value");
+        eventSet.add(JSON.toJSONString(map));
+        eventByPreset.put("alarm", eventSet);
+        System.out.println("eventByPreset:" + JSON.toJSONString(eventByPreset));
+
+        Map<String, Set<String>> eventBySs = new HashMap<>();
+        Set<String> ssSet = new HashSet<>();
+        map = new HashMap<>();
+        map.put("key", "value");
+        ssSet.add(JSON.toJSONString(map));
+        eventBySs.put("alarm", ssSet);
+        System.out.println("eventBySs:" + JSON.toJSONString(eventBySs));
+
+        boolean combTypeIsAll = false;
+        boolean result = this.equalCompareOperateEvent(eventByPreset, eventBySs, combTypeIsAll);
+        System.out.println(result);
+    }
+
+    private boolean equalCompareOperateEvent(Map<String, Set<String>> eventByPreset, Map<String, Set<String>> eventBySs,
+                                             boolean combTypeIsAll) {
+        boolean result = false;
+        if (CollectionUtils.isEmpty(eventByPreset)) {
+            result = true;
+            return result;
+        }
+        if (CollectionUtils.isEmpty(eventBySs)) {
+            return result;
+        }
+        for (String key:eventByPreset.keySet()) {
+            Set<String> setByPreset = eventByPreset.get(key);
+            if (eventBySs.get(key) == null && combTypeIsAll) {
+                return result;
+            }
+            if (eventBySs.get(key) == null) {
+                continue;
+            }
+            Set<String> setBySs = eventBySs.get(key);
+            for (String eventValue:setByPreset) {
+                if (combTypeIsAll) {
+                    if (!setBySs.contains(eventValue)) {
+                        return result;
+                    } else {
+                        result = true;
+                    }
+                } else {
+                    if (setBySs.contains(eventValue)) {
+                        result = true;
+                        return result;
+                    } else {
+                        result = false;
+                    }
+                }
+            }
+        }
+        return result;
     }
 
     @Test
@@ -117,6 +184,51 @@ public class Test3 {
         System.out.println("map2:" + JSON.toJSONString(map2));
         map1.putAll(map2);
         System.out.println("map1:" + JSON.toJSONString(map1));
+    }
+
+    @Test
+    public void testJSONByte() {
+        User user = new User();
+        user.setName("zhangs");
+        System.out.println(JSON.toJSONString(user));
+        byte[] userArr = JSON.toJSONBytes(user);
+        User user1 = JSON.parseObject(userArr, User.class);
+        System.out.println(JSON.toJSONString(user1));
+    }
+
+    @Test
+    public void testRetainAll() {
+        List<String> list1 = new ArrayList<>();
+        list1.add("123");
+        list1.add("456");
+        list1.add("456");
+        System.out.println(JSON.toJSONString(list1));
+        Set<String> set = new HashSet<>();
+        set.add("123");
+        set.add("123");
+        set.add("abc");
+        System.out.println(JSON.toJSONString(set));
+        set.retainAll(list1);
+        System.out.println(JSON.toJSONString(set));
+    }
+
+    @Test
+    public void testAnd() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("status", true);
+        String mapStr = JSON.toJSONString(map);
+        System.out.println(mapStr);
+        Map<String, Object> map2 = JSON.parseObject(mapStr, Map.class);
+        System.out.println(JSON.toJSONString(map2));
+        Set<String> set = new HashSet<>();
+        set.add(mapStr);
+        System.out.println(set.contains(JSON.toJSONString(map2)));
+        int a = 1;
+        if (a != 0 && a != 1) {
+            System.out.println(false);
+        } else {
+            System.out.println(true);
+        }
     }
 }
 

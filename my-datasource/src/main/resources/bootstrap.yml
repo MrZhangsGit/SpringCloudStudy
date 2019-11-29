@@ -1,0 +1,30 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8772
+spring:
+  application:
+    name: my-datasource
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+master:
+  datasource:
+    url: jdbc:mysql://192.168.0.17:3306/db_dmmdl?useSSL=true&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: iot
+    password: iot888
+    driverClassName: com.mysql.jdbc.Driver
+slave:
+  datasource:
+    url: jdbc:mysql://192.168.0.17:3306/db_dmmdl_afresh?useSSL=true&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: iot
+    password: iot888
+    driverClassName: com.mysql.jdbc.Driver
+third:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_dmmdl?useSSL=true&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver

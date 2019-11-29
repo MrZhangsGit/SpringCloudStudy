@@ -43,7 +43,7 @@ public class RabbitMQConfig {
     private String password = "123456";
 
     public static final String DIRECT_QUEUE_NAME = "queue_rpc_test";
-    public static final String TOPIC_QUEUE_NAME = "queue_as_car_test";
+    public static final String TOPIC_QUEUE_NAME = "queue_local_car";
 
     public static final String DIRECT_EXCHANGE_NAME = "exchange_direct_rpc";
     public static final String TOPIC_EXCHANGE_NAME = "exchange_topic_as_car";
@@ -112,10 +112,19 @@ public class RabbitMQConfig {
 
     /**
      * 一个交换机可以绑定多个消息队列，即消息通过一个交换机可以分发到不同的队列中
+     * 注:此处bind方法中将queue、exchange以及routingKey进行绑定，所以在消费者处@RabbitListener(queues = RabbitMQConfig.TOPIC_QUEUE_NAME)
+     *   中只需监听队列即可。此处也可不进行绑定而在消费者的@RabbitListener中进行
      */
     @Bean
     public Binding topicExchangeBinding() {
         log.info("{}---topicExchangeBinding", Thread.currentThread().getStackTrace()[1].getMethodName());
+        /**
+         * .bind(queueTopic()).to(defaultTopicExchange()).with(RabbitMQConfig.TOPIC_ROUTING_KEY):
+         *    将queue、exchange以及routingKey进行绑定
+         *    每个queue与exchange进行绑定就需要写一个对应的bind方法
+         *    routingKey与MQTT中的topic作用类似，即在同一个exchange以及同一个queue中多个消息可以使用routingKey进行匹配
+         *      订阅。此处个人感觉RabbitMQ是MQTT进行了(信道)拆分扩展
+         */
         return BindingBuilder.bind(queueTopic()).to(defaultTopicExchange()).with(RabbitMQConfig.TOPIC_ROUTING_KEY);
     }
     @Bean
