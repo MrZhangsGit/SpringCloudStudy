@@ -1,6 +1,7 @@
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.junit.jupiter.api.Test;
 import org.luaj.vm2.ast.Str;
 import org.springframework.util.CollectionUtils;
@@ -191,14 +192,37 @@ public class Test3 {
         User user = new User();
         user.setName("zhangs");
         System.out.println(JSON.toJSONString(user));
-        byte[] userArr = JSON.toJSONBytes(user);
-        User user1 = JSON.parseObject(userArr, User.class);
-        System.out.println(JSON.toJSONString(user1));
+//        byte[] userArr = JSON.toJSONBytes(user);
+//        User user1 = JSON.parseObject(userArr, User.class);
+//        System.out.println(JSON.toJSONString(user1));
+    }
+
+    @Test
+    public void testForSwitch() {
+        boolean flag = true;
+        for (int i=0;i<10 && flag;i++) {
+            switch (i) {
+                case 1:
+                    System.out.println("switch i:" + i);
+                    break;
+                case 2:
+                    if (i == 2) {
+                        System.out.println("提前跳出switch");
+                        break;
+                    }
+                    System.out.println("switch i:" + i);
+                    break;
+                case 3:
+                    flag = false;
+                    break;
+            }
+            System.out.println("For i:" + i);
+        }
     }
 
     @Test
     public void testRetainAll() {
-        List<String> list1 = new ArrayList<>();
+        /*List<String> list1 = new ArrayList<>();
         list1.add("123");
         list1.add("456");
         list1.add("456");
@@ -209,7 +233,17 @@ public class Test3 {
         set.add("abc");
         System.out.println(JSON.toJSONString(set));
         set.retainAll(list1);
-        System.out.println(JSON.toJSONString(set));
+        System.out.println(JSON.toJSONString(set));*/
+        if (42 == 42.0) {
+            System.out.println(1);
+        } else {
+            System.out.println(2);
+        }
+        if ("42" == "42.0") {
+            System.out.println(1);
+        } else {
+            System.out.println(2);
+        }
     }
 
     @Test
@@ -230,12 +264,85 @@ public class Test3 {
             System.out.println(true);
         }
     }
+
+    @Test
+    public void testProxy() {
+        Network network = null;
+        network = new Proxy(new Real());
+        network.browse();
+    }
+
+    @Test
+    public void testIsEmpty() {
+        Map map = new HashMap();
+        System.out.println(CollectionUtils.isEmpty(map));
+    }
+
+    @Test
+    public void testList() {
+        /*List<String> list = new ArrayList<>();
+        List<String> list1 = new ArrayList<>();
+        list1.add("123");
+        list.addAll(list1);
+        System.out.println(JSON.toJSONString(list));*/
+        String str = "003777638043411d,139a211d5e7d4b43,1be249b3ef5a4d1c,219078d530b64faa,3405e9716a6c4ab2,467f8e2e61ed45cf,5fb4e41d4f894658,62284a5b0f91422a,6b966aa8fbdd44be,78a07f956a594722,970b04f7b5a34fff,a3e6653816d54788,ab71c85c03a04476,c6815d6103104058,e53e9e2879de4875,ee12855d7ef047e8,eefe85e9673f4126";
+        List<String> list = Arrays.asList(str.split(","));
+        for (String string:list) {
+            System.out.println("('" + string + "', 1, 1, NOW(), NOW()),");
+        }
+    }
+
+    @Test
+    public void testSQL() {
+        String deviceId = "5fb4e41d4f894658d0494d0345";
+        for (int i = 35001;i < 40000;i++) {
+            String sql = "( '" + (deviceId + i) + "', '5fb4e41d4f894658-dc4f2278f445', '5fb4e41d4f894658-dc4f2278f445', '5fb4e41d4f894658', 'e7278228cff34087bd97ea9baf1a27fv', 'F010', 'IPTV遥控器', NULL, NULL," +
+                    " 1, NULL, NULL,NULL, NULL, NULL, NULL, NULL, true, 1, NOW(), NOW(), 0 ), ";
+            System.out.println(sql);
+        }
+
+
+    }
+}
+
+interface Network {
+    public void browse();
+}
+
+class Real implements Network {
+
+    @Override
+    public void browse() {
+        System.out.println("上网！");
+    }
+}
+
+class Proxy implements Network {
+
+    private Network network;
+
+    public Proxy(Network network) {
+        this.network = network;
+    }
+
+    public void check() {
+        System.out.println("校验！");
+    }
+
+    @Override
+    public void browse() {
+        this.check();
+        this.network.browse();
+    }
 }
 
 class User {
     private Date startDate;
 
     private String name;
+
+    @NotEmpty
+    private Object sex;
 
     public Date getStartDate() {
         return startDate;
@@ -252,6 +359,14 @@ class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Object getSex() {
+        return sex;
+    }
+
+    public void setSex(Object sex) {
+        this.sex = sex;
     }
 }
 
