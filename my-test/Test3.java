@@ -300,8 +300,32 @@ public class Test3 {
                     " 1, NULL, NULL,NULL, NULL, NULL, NULL, NULL, true, 1, NOW(), NOW(), 0 ), ";
             System.out.println(sql);
         }
+    }
 
-
+    @Test
+    public void testSyncMap() {
+        Map<Integer, String> syncMap = Collections.synchronizedMap(new HashMap<Integer, String>());
+        for (int i=0;i<20;i++) {
+            syncMap.put(i, String.valueOf(i));
+        }
+        Set<Map.Entry<Integer, String>> keySets = syncMap.entrySet();
+        Iterator<Map.Entry<Integer, String>> keySetIt = keySets.iterator();
+        try {
+            while (keySetIt.hasNext()) {
+                Map.Entry<Integer, String> entrys = keySetIt.next();
+                /*System.out.println(entrys.getValue());*/
+                if ("1".equals(entrys.getValue())) {
+                    System.out.println(entrys.getValue());
+                    /*syncMap.remove(1);*/
+                    keySetIt.remove();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        for (int i:syncMap.keySet()) {
+            System.out.println(syncMap.get(i));
+        }
     }
 }
 

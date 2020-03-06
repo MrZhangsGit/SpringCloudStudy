@@ -28,6 +28,14 @@ public class HttpRequestAspect {
     @Pointcut("execution( * com.my.aspect..*.*(..))")
     public void httpRequest() {}
 
+    @Pointcut("@annotation(com.my.aspect.annotion.MyLog)")
+    public void myLog() {}
+
+    @Before("myLog()")
+    public void before(JoinPoint joinPoint) throws Throwable {
+        log.info("MyLog---:{}", Thread.currentThread().getStackTrace()[1].getMethodName());
+    }
+
     @Before("httpRequest()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {
         log.info("---:{}", Thread.currentThread().getStackTrace()[1].getMethodName());

@@ -30,6 +30,9 @@ public class FileUploadController {
         }
         log.info("fileName:{}",file.getOriginalFilename());
         log.info("fileType:{}",file.getContentType());
+        /**
+         * file.getBytes()即为上传文件内容二进制数据，mysql中可使用blob类型进行存储
+         */
         log.info("Bytes:{}", file.getBytes());
 
         //文件存放路径

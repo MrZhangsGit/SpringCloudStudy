@@ -1,5 +1,6 @@
 package com.my.aspect.controller;
 
+import com.my.aspect.annotion.MyLog;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -13,6 +14,7 @@ public class HelloController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     @ResponseBody
+    @MyLog("这是一个自定义注解切面日志---")
     public String hello(@RequestParam String name) {
         System.out.println(name);
         return "Hello " + name;
