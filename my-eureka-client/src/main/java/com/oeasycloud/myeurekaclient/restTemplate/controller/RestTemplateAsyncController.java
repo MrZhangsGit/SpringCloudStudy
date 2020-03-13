@@ -60,7 +60,7 @@ public class RestTemplateAsyncController {
     /**
      * post 回调有参
      */
-    @RequestMapping(value = "/rest/async/create", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/rest/async/create", method = RequestMethod.POST)
     public void create() {
         MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
         headers.add("Content-Type", "application/json; charset=UTF-8");
@@ -81,12 +81,12 @@ public class RestTemplateAsyncController {
                 System.out.println("AsyncRestTemplate Response Success.Result:" + JSON.toJSONString(userEntityResponseEntity.getBody()));
             }
         });
-    }
+    }*/
 
     /**
      * post 回调无参
      */
-    @RequestMapping(value = "/rest/async/create2", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/rest/async/create2", method = RequestMethod.POST)
     public void create2() {
         MultiValueMap<String, String> headers = new LinkedMultiValueMap<String, String>();
         headers.add("Content-Type", "application/json; charset=UTF-8");
@@ -110,7 +110,7 @@ public class RestTemplateAsyncController {
         System.out.println("=================asyncRestTemplate POST Is Over!");
         ListenableFuture<ResponseEntity<List>>  forEntityGet= asyncRestTemplate.exchange(URL + "/getAll", HttpMethod.POST, httpEntity, List.class);
         System.out.println("=================asyncRestTemplate GET Is Over!");
-    }
+    }*/
 
     /**
      * 异步回调

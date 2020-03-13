@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  * @Description
  * @createDate 2019/6/6
  */
-public class Test3 {
+public class Test3{
     @Test
     public void testmap() {
         Map<String, Object> map = new HashMap<>();
@@ -304,7 +304,7 @@ public class Test3 {
 
     @Test
     public void testSyncMap() {
-        Map<Integer, String> syncMap = Collections.synchronizedMap(new HashMap<Integer, String>());
+        /*Map<Integer, String> syncMap = Collections.synchronizedMap(new HashMap<Integer, String>());
         for (int i=0;i<20;i++) {
             syncMap.put(i, String.valueOf(i));
         }
@@ -313,10 +313,10 @@ public class Test3 {
         try {
             while (keySetIt.hasNext()) {
                 Map.Entry<Integer, String> entrys = keySetIt.next();
-                /*System.out.println(entrys.getValue());*/
+                *//*System.out.println(entrys.getValue());*//*
                 if ("1".equals(entrys.getValue())) {
                     System.out.println(entrys.getValue());
-                    /*syncMap.remove(1);*/
+                    *//*syncMap.remove(1);*//*
                     keySetIt.remove();
                 }
             }
@@ -325,7 +325,10 @@ public class Test3 {
         }
         for (int i:syncMap.keySet()) {
             System.out.println(syncMap.get(i));
-        }
+        }*/
+        byte[] bytes = "1".getBytes();
+        System.out.println(JSON.toJSONString(bytes));
+        System.out.println(new String(bytes));
     }
 }
 

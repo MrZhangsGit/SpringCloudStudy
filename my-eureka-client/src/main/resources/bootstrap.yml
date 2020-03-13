@@ -7,3 +7,13 @@ server:
 spring:
   application:
     name: my-eureka-client
+
+#读取配置放入map
+test:
+  a: 1
+  b: 2
+  limitSizeMap:
+    baidu: 1024
+    sougou: 90
+    huawei: 4096
+    qq: 120

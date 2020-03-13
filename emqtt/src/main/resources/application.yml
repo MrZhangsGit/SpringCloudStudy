@@ -3,10 +3,10 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 server:
-  port: 8779
+  port: 8879
 spring:
   application:
-    name: my-mqtt-consumer
+    name: emqttPool
 mqtt:
   host: tcp://192.168.0.17:1883
   username: admin
@@ -19,12 +19,21 @@ mqtt:
   #服务器列表,多个以英文逗号拼接
   hosts: tcp://192.168.0.17:1883
   #超时时间 单位为秒
-  connectionTimeout: 10
+  connectionTimeout: 20
   #会话心跳时间 单位为秒
   #若心跳时间过短，在消费端繁忙时会无法完成服务端的心跳回复导致服务端认为消费端下线而无法完成订阅
   #可采用MQ接收端和消费端之间加上队列
-  keepAliveInterval: 5
+  keepAliveInterval: 30
   #消息发布者clientId
-  publishClientId: my_publish_02
+  #publishClientId: my_publish_02
   #消息订阅者clientId
-  subscribeClientId: my_subscribe_02
+  #subscribeClientId: my_subscribe_02
+  corePublishSize: 5
+  maxPublishSize: 5
+  coreSubscribeSize: 5
+  maxSubscribeSize: 5
+threadpool:
+  corePoolSize: 5
+  maxPoolSize: 100
+  queueCapacity: 100
+  keepAliveSeconds: 60

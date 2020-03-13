@@ -1,5 +1,9 @@
 package com.my.mqtt.consumer.config.mqttWapper;
 
+import org.eclipse.paho.client.mqttv3.MqttClient;
+
+import java.util.List;
+
 /**
  * <desc>
  * EMQ服务管理接口。
@@ -25,4 +29,11 @@ public interface IMqttWrapperService {
      * @return
      */
     Boolean subscribe(String topic);
+
+    /**
+     * 取消订阅消息
+     * @param topic
+     * @return
+     */
+    Boolean unSubscribe(String topic);
 }
