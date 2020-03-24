@@ -92,6 +92,13 @@
             <version>5.3.6.Final</version>
             <scope>compile</scope>
         </dependency>
+
+        <!-- 布隆过滤器 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
+        </dependency>
     </dependencies>
 
 

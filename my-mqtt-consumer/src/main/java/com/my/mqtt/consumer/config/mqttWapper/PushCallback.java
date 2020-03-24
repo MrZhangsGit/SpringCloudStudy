@@ -45,7 +45,7 @@ public class PushCallback implements MqttCallbackExtended {
      * 消息订阅者配置类
      */
     @Autowired
-    private SubscribeConn subscribeConn;
+    private PublishConn publishConn;
 
     @Autowired
     private QueueHandleUtil queueHandleUtil;
@@ -139,5 +139,6 @@ public class PushCallback implements MqttCallbackExtended {
     public void connectComplete(boolean reconnect, String serverURI) {
         log.info("connectComplete---连接成功...{}", reconnect);
         iMqttSubscribe.subscribe(TOPIC);
+        publishConn.getConn();
     }
 }
