@@ -25,4 +25,6 @@ public interface CityDao {
     Integer saveCity(Map<String, Object> params);
 
     Integer del(@Param("id") String id);
+
+    Integer updateById(Map<String, Object> params);
 }

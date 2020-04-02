@@ -1,0 +1,20 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8863
+spring:
+  application:
+    name: my-elasticsearch
+  datasource:
+    url: jdbc:mysql://192.168.0.17:3306/db_asmdl?useSSL=true&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: iot
+    password: iot888
+elasticsearch:
+  cluster:
+    name: elasticsearch
+  host: 127.0.0.1
+  port: 9300
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

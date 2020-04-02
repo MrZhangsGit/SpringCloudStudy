@@ -28,4 +28,8 @@
     <insert id="saveCity" parameterType="java.util.Map">
         INSERT INTO city(province_id, city_name, description) VALUES (#{provinceId}, #{cityName}, #{description})
     </insert>
+
+    <insert id="updateById" parameterType="java.util.Map">
+        UPDATE city SET description = #{description} WHERE id = #{id}
+    </insert>
 </mapper>

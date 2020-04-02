@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="my.elasticsearch.dao.IAutoSnapshotDao">
+
+    <select id="getAll" resultType="my.elasticsearch.po.AutoSnapshotPO">
+        SELECT id, automatic_id AS automaticId, trigger_data AS triggerData, output_data AS outputData,
+            complete, status, create_time AS createTime
+        FROM auto_snapshot
+        ORDER BY create_time DESC LIMIT 501, 500
+    </select>
+</mapper>
