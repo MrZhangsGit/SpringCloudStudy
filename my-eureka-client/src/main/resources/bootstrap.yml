@@ -17,3 +17,7 @@ test:
     sougou: 90
     huawei: 4096
     qq: 120
+app:
+  version: @project.version@
+  build:
+    time: @timestamp@
