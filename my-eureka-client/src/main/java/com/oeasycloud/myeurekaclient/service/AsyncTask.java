@@ -16,7 +16,7 @@ import java.util.concurrent.Future;
 public class AsyncTask {
     public static Random random = new Random();
 
-    @Async
+    @Async("taskExecutorConfigurer")
     public Future<String> doTaskOne() throws Exception{
         System.out.println("开始任务一   " + Thread.currentThread().getName());
         long start = System.currentTimeMillis();
@@ -34,7 +34,7 @@ public class AsyncTask {
         return new AsyncResult<>("任务二完成");
     }
 
-    @Async
+    @Async("asyncExecutor")
     public void doTaskThree() throws Exception{
         System.out.println("开始任务三   " + Thread.currentThread().getName());
         long start = System.currentTimeMillis();

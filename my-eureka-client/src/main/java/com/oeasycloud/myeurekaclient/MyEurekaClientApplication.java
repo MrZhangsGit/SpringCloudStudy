@@ -18,7 +18,7 @@ public class MyEurekaClientApplication {
 		SpringApplication.run(MyEurekaClientApplication.class, args);
 	}
 
-	@Bean
+	@Bean("asyncExecutor")
 	public Executor asyncExecutor() {
 		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
 		executor.setCorePoolSize(2);

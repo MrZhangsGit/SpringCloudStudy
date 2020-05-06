@@ -70,6 +70,8 @@ public class ClientController {
      *
      * 在EnableAsync注解中有@Import AsyncConfigurationSelector.class（用来导入一个或多个class，这些类会注入到spring容器中，
      *   或者配置类，配置类里面定义的bean都会被spring容器托管）。
+     *
+     * 在@Async注解的方法中可设置需要配置的线程池
      */
     @Autowired
     private AsyncTask asyncTask;
