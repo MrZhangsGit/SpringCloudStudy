@@ -21,9 +21,8 @@ public class Test4 {
         System.out.println(deviceIds);
         System.out.println(JSON.toJSONString(deviceIds));*/
 
-        Map<String, Integer> map = new HashMap<>();
+        /*Map<String, Integer> map = new HashMap<>();
         Integer count = map.get("1");
         System.out.println(count);
-        System.out.println(count != null);
-    }
+        System.out.println(count != null);*/}
 }

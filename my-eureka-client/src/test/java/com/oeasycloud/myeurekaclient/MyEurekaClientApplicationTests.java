@@ -24,5 +24,6 @@ public class MyEurekaClientApplicationTests {
 		Map<String, Integer> map = mapConfig.getLimitSizeMap();
 		System.out.println(mapConfig.getA());
 		System.out.println(JSON.toJSONString(map));
+		System.out.println(JSON.toJSONString(mapConfig.getPropertiesList()));
 	}
 }

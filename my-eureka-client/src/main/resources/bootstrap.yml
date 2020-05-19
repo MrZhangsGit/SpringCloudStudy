@@ -12,6 +12,17 @@ spring:
 test:
   a: 1
   b: 2
+  propertiesList:
+    - properties: status
+      aliproperties: powerstate
+    - properties: brightness
+      aliproperties: brightness
+    - properties: colorTemperature
+      aliproperties: colorTemperature
+    - properties: humidity
+      aliproperties: humidity
+    - properties: temperature
+      aliproperties: temperature
   limitSizeMap:
     baidu: 1024
     sougou: 90
