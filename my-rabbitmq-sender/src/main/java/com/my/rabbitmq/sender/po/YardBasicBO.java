@@ -13,7 +13,7 @@ public class YardBasicBO {
     /**
      * 数据内容
      */
-    private JSONObject data;
+    //private JSONObject data;
 
     /**
      * 时间戳

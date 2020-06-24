@@ -34,22 +34,41 @@ public class RabbitMQConfig {
      * Channel: 消息通道，在客户端的每个连接里可以建立多个channel
      */
 
-    private String host = "192.168.0.21";
+    private String host = "127.0.0.1";
 
     private int port = 5672;
 
-    private String username = "zhangs";
+    private String username = "guest";
 
-    private String password = "123456";
+    private String password = "guest";
 
     public static final String DIRECT_QUEUE_NAME = "queue_rpc_test";
     public static final String TOPIC_QUEUE_NAME = "queue_local_car";
+    /**
+     * 配置死信队列的队列名
+     */
+    public static final String QUEUE_NAME_WITH_DEAD = "hello_queue_with_dead";
+    /**
+     * 死信队列
+     */
+    public static final String DEAD_QUEUE_NAME = "dead_queue";
 
     public static final String DIRECT_EXCHANGE_NAME = "exchange_direct_rpc";
     public static final String TOPIC_EXCHANGE_NAME = "exchange_topic_as_car";
+    public static final String DEAD_EXCHANGE_NAME = "dead_exchange";
 
     public static final String DIRECT_ROUTING_KEY = "rpc";
     public static final String TOPIC_ROUTING_KEY = "topic.car.*";
+    public static final String DEAD_ROUTING_KEY = "dead_routing_key";
+
+    /**
+     * 死信队列 交换机标识符
+     */
+    public static final String DEAD_LETTER_QUEUE_KEY = "x-dead-letter-exchange";
+    /**
+     * 死信队列交换机绑定键标识符
+     */
+    public static final String DEAD_LETTER_ROUTING_KEY = "x-dead-letter-routing-key";
 
     @Bean
     public ConnectionFactory connectionFactory() {
@@ -131,5 +150,31 @@ public class RabbitMQConfig {
     public Binding directExchangeBinding() {
         log.info("{}---directExchangeBinding", Thread.currentThread().getStackTrace()[1].getMethodName());
         return BindingBuilder.bind(queueDirect()).to(defaultDirectExchange()).with(RabbitMQConfig.DIRECT_ROUTING_KEY);
+    }
+
+    /**
+     * 死信队列
+     */
+    @Bean
+    public Queue helloWithDeadQueue() {
+        //将普通队列绑定到死信交换机上
+        Map map = new HashMap<>(2);
+        map.put(DEAD_LETTER_QUEUE_KEY, DEAD_EXCHANGE_NAME);
+        map.put(DEAD_LETTER_ROUTING_KEY, DEAD_ROUTING_KEY);
+        Queue queue = new Queue(QUEUE_NAME_WITH_DEAD, true, false, false, map);
+        return queue;
+    }
+    @Bean
+    public Queue deadQueue() {
+        Queue queue = new Queue(DEAD_QUEUE_NAME, true);
+        return queue;
+    }
+    @Bean
+    public DirectExchange deadExchange() {
+        return new DirectExchange(DEAD_EXCHANGE_NAME);
+    }
+    @Bean
+    public Binding bindingDeadExchange(Queue deadQueue, DirectExchange deadExchange) {
+        return BindingBuilder.bind(deadQueue).to(deadExchange).with(DEAD_ROUTING_KEY);
     }
 }
