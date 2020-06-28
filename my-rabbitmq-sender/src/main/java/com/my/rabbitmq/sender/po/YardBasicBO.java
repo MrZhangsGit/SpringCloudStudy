@@ -19,4 +19,9 @@ public class YardBasicBO {
      * 时间戳
      */
     private Long timestamp;
+
+    /**
+     * 有效时间(s)
+     */
+    private Integer active;
 }

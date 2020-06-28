@@ -19,12 +19,15 @@ public class MsgReceiver {
     @RabbitListener(queues = RabbitMQConfig.TOPIC_QUEUE_NAME)
     public void topicProcess(String content) {
         log.info("Topic---接收处理队列A当中的消息:{}", content);
-        YardBasicBO yardBasic = JSON.parseObject(content, YardBasicBO.class);
-        System.out.println(JSON.toJSONString(yardBasic));
     }
 
     @RabbitListener(queues = RabbitMQConfig.DIRECT_QUEUE_NAME)
     public void directProcess(String content) {
         log.info("Direct---接收处理队列A当中的消息:{}", content);
     }
+
+    /*@RabbitListener(queues = "send")
+    public void sendProcess(String content) {
+        log.info("send---接收处理队列A当中的消息:{}", content);
+    }*/
 }

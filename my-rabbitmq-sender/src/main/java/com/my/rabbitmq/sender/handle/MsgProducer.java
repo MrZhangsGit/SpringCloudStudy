@@ -2,6 +2,7 @@ package com.my.rabbitmq.sender.handle;
 
 import com.my.rabbitmq.sender.config.RabbitMQConfig;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.MessagePostProcessor;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,8 +50,17 @@ public class MsgProducer implements RabbitTemplate.ConfirmCallback {
         CorrelationData correlationData = new CorrelationData(UUID.randomUUID().toString());
         /**
          * 将消息放入ROUTINGKEY_A对应的队列当中，对应的队列是A
+         * 在RabbitMQ的队列中已设置队列上的超时时间
          */
         rabbitTemplate.convertAndSend(RabbitMQConfig.TOPIC_EXCHANGE_NAME, RabbitMQConfig.TOPIC_ROUTING_KEY, content, correlationData);
+    }
+
+    public void sendTopicMsgWithActive(String content) {
+        MessagePostProcessor messagePostProcessor = new MyMessagePostProcessor(3 * 1000);
+        /**
+         * 在RabbitMQ的队列中已设置队列上的超时时间
+         */
+        rabbitTemplate.convertAndSend(RabbitMQConfig.TOPIC_EXCHANGE_NAME, RabbitMQConfig.TOPIC_ROUTING_KEY, content, messagePostProcessor);
     }
 
     public void sendDirectMsg(String content) {
