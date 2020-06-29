@@ -3,12 +3,10 @@ package com.my.rabbitmq.sender.controller;
 import com.alibaba.fastjson.JSON;
 import com.my.rabbitmq.sender.config.RabbitMQConfig;
 import com.my.rabbitmq.sender.handle.MsgProducer;
+import com.my.rabbitmq.sender.handle.MyConsumer;
 import com.my.rabbitmq.sender.handle.deadQueue.HelloSender;
 import com.my.rabbitmq.sender.po.YardBasicBO;
-import com.rabbitmq.client.AMQP;
-import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,6 +27,10 @@ public class SenderController {
         msgProducer.sendTopicMsgWithActive("Second Message with Active");
     }
 
+    /**
+     * channel 生产者-消费者
+     * @param yardBasicBO
+     */
     @PostMapping("/send")
     public void send(@RequestBody YardBasicBO yardBasicBO) {
         try {
@@ -82,6 +84,11 @@ public class SenderController {
              */
             channel2.basicPublish("", QUEUE_NAME, properties2, "Second Message".getBytes("UTF-8"));
             log.info("--- Sender Message:{}", "Second Message");
+
+            Thread.sleep(5000);
+
+            this.receiver();
+
             /**
              * 关闭频道和连接
              */
@@ -89,6 +96,44 @@ public class SenderController {
             connection.close();
         } catch (Exception e) {
             log.error("Error:{}", e);
+        }
+    }
+
+    public void receiver() {
+        try {
+            /**
+             * 队列名称
+             */
+            String QUEUE_NAME = "send";
+            /**
+             * 创建连接连接RabbitMQ
+             */
+            ConnectionFactory factory = new ConnectionFactory();
+            /**
+             * 设置RabbitMQ所在主机ip
+             */
+            factory.setHost("127.0.0.1");
+            /**
+             * 创建一个连接
+             */
+            Connection connection = factory.newConnection();
+            /*String exchangeName = "test_consumer_exchange";
+            String routingKey = "consumer.#";
+            String queueName = "test_consumer_queue";*/
+            /**
+             * 创建一个频道
+             */
+            Channel channel = connection.createChannel();
+            /*channel.exchangeDeclare(exchangeName, "topic", true, false, null);
+            channel.queueDeclare(queueName, true, false, false, null);
+            channel.queueBind(queueName, exchangeName, routingKey);*/
+            channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+            //指定消费队列
+            channel.basicConsume(QUEUE_NAME, true, new MyConsumer(channel));
+            channel.close();
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
