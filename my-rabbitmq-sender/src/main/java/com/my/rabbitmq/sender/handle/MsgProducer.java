@@ -130,7 +130,7 @@ public class MsgProducer implements RabbitTemplate.ConfirmCallback {
 
             AMQP.BasicProperties.Builder builder2 = new AMQP.BasicProperties.Builder();
             /**
-             * builder.expiration() 设置每条消息的过期时间
+             * builder.expiration() 设置每条消息的过期时间(millis)
              */
             builder2.expiration("10000");
             builder2.deliveryMode(2);

@@ -11,7 +11,8 @@ public class QuartzTest {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss SSS");
         System.out.println("定时任务执行开始时间 ： " + sdf.format(new Date()) + " ,时间戳：" + System.currentTimeMillis());
         System.out.println("main 当前线程名称: " + Thread.currentThread().getName());
-        test2(System.currentTimeMillis());
+        test1();
+        //test2(System.currentTimeMillis());
     }
 
     public static void test1() {
@@ -24,8 +25,8 @@ public class QuartzTest {
             //构建JobDetail
             JobDetail jobDetail = JobBuilder.newJob(QuartsWorkJob.class)
                     .withDescription("description")
-                    .usingJobData("name", "JobName")    //向JobDataMap添加要传递的值
-                    .usingJobData("other", "value")
+                    .usingJobData("name", jobName)    //向JobDataMap添加要传递的值
+                    //.usingJobData("other", "value")
                     .build();
 
             //触发器名称
@@ -52,7 +53,6 @@ public class QuartzTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     /**

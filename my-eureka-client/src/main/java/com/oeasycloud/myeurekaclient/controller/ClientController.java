@@ -1,17 +1,19 @@
 package com.oeasycloud.myeurekaclient.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.oeasycloud.myeurekaclient.config.ThreadPoolRunner;
 import com.oeasycloud.myeurekaclient.service.AsyncTask;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Future;
@@ -109,6 +111,48 @@ public class ClientController {
             Thread.sleep(2000);
         } catch (Exception e){
             System.out.println(e);
+        }
+    }
+
+    /**
+     * 使用request获取body中的数据
+     */
+    /**
+     * request payload请求方式 (传递的为json数据)
+     *  postman中使用body-raw(text)方式，数据只有value(eg:{"abc","123"},注意:无换行符)
+     * @param request
+     */
+    @PostMapping("/callback")
+    public void getBodyByRequest(HttpServletRequest request) {
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(request.getInputStream()));
+            String str = reader.readLine();
+            System.out.println(str);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * formData请求方式
+     *  postman中在params中传入key-value
+     * @param request
+     */
+    @PostMapping("/callback2")
+    public void getBodyByRequest2(HttpServletRequest request) {
+        try {
+            String paraName = null;
+            Map<String, Object> parameters = new HashMap<>();
+            //获取请求参数并转换
+            //
+            Enumeration<String> enu = request.getParameterNames();
+            while (enu.hasMoreElements()) {
+                paraName = enu.nextElement();
+                parameters.put(paraName, request.getParameter(paraName));
+            }
+            System.out.println(JSONObject.toJSONString(parameters));
+            //return parameters;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
